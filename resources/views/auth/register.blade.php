@@ -22,6 +22,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                        <input name="type_user" id="type_user" value="Студент" hidden>
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Имя') }}</label>
 
@@ -85,6 +86,7 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
+                            <input name="type_user" id="type_user" value="Компания" hidden>
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Название компании') }}</label>
 
