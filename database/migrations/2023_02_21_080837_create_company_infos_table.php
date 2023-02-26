@@ -22,7 +22,7 @@ return new class extends Migration
             $table->primary('id_company');
 
             $table->foreign('id_company')
-                ->references('id_user')
+                ->references('id')
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

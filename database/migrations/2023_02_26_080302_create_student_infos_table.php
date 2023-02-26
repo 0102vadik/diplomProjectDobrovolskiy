@@ -25,7 +25,7 @@ return new class extends Migration
             $table->primary('id_student');
 
             $table->foreign('id_student','student_infos_users')
-                ->references('id_user')
+                ->references('id')
                 ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
