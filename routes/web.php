@@ -24,3 +24,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/register/student', function (){
+   return view('forms.student');
+})->name('register-student');
+
+Route::get('/register/company', function (){
+    return view('forms.company');
+})->name('register-company');
+
+

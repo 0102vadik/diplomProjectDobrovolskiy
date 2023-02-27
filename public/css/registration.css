@@ -1,0 +1,15 @@
+#companyForm{
+    display: none;
+}
+
+.choose{
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 20px;
+}
+
+.choose .btn{
+    width: 100%;
+    margin-bottom: 10px;
+}
