@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('patronymic');
             $table->integer('course');
             $table->string('group');
-            $table->text('description');
-            $table->string('photo_src');
+            $table->text('description')->nullable();
+            $table->string('photo_src')->nullable();
             $table->timestamps();
 
             $table->primary('id_student');

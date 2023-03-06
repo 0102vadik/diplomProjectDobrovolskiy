@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('company_infos', function (Blueprint $table) {
             $table->bigInteger('id_company')->unsigned();
             $table->string('company_name');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('phone_contact');
-            $table->string('logo_src');
+            $table->string('logo_src')->nullable();
             $table->timestamps();
 
             $table->primary('id_company');
