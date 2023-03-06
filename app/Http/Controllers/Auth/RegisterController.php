@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company_info;
+use App\Models\Student_info;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Mockery\Exception;
 
 class RegisterController extends Controller
 {
@@ -44,7 +47,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -54,22 +57,44 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'type_user' => ['required'],
+            'phone' => ['required']
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'type_user' => $data['type_user']
         ]);
+
+        if ($data['type_user'] === 'Студент') {
+            Student_info::create([
+                'name' => $data['name'],
+                'course' => $data['course'],
+                'surname' => $data['surname'],
+                'patronymic' => $data['patronymic'],
+                'group' => $data['group'],
+                'id_student' => $user->id,
+            ]);
+        } elseif ($data['type_user'] === 'Компания') {
+            Company_info::create([
+                'company_name' => $data['name'],
+                'phone_contact' => $data['phone'],
+                'id_company' => $user->id,
+            ]);
+        } else {
+            throw new Exception("Exception Error");
+        }
+
+        return $user;
     }
 }
