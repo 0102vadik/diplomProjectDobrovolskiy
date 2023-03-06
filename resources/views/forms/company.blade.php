@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('head_links')
+    <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
 @endsection
 
 @section('content')
@@ -10,7 +11,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-primary" href="{{ route('register') }}"><</a>
+                        <a class="btn btn-primary float-start" href="{{ route('register') }}"><</a>
                         {{ __('Регистрация') }}
                     </div>
                     <div class="card">

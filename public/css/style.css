@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root{
+    --primary: #7E4DFD;
+    --secondary: #5131a2;
+    --white: #fff;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand{
+    color: var(--primary);
+    font-weight: 700;
+    transition: 1s;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.navbar-brand:hover{
+    color: var(--secondary);
+}
+
+.nav-link{
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.nav-link:hover{
+    color: var(--secondary);
+}

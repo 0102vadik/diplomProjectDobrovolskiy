@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
+@section('head_links')
+    <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-self-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Логин') }}</div>
@@ -54,7 +58,7 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Войти') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
