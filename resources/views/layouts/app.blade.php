@@ -27,7 +27,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="https://eu.bru.by/assets_config/BRU/img/logo-big.png" alt="" width="30em">
+                    {{--{{ config('app.name', 'Laravel') }}--}}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,9 +36,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    {{--<ul class="navbar-nav me-auto">
-
-                    </ul>--}}
+                    @guest
+                        @else
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">{{ __('Список вакансий') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link">{{ __('Список анкет') }}</a>
+                                </li>
+                            </ul>
+                    @endguest
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -55,16 +64,33 @@
                                 </li>
                             @endif
                         @else
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link create-link">{{ __('Cоздать вакансию') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link create-link">{{ __('Cоздать анкету') }}</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-item-container">
+
+                                        <a href="#" class="dropdown-item">
+                                            <img src="{{ asset('img/fi-rr-user.png') }}" alt="" width="15px" height="15px">
+                                            {{ __('Личный кабинет') }}
+                                        </a>
+                                    </div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <img src="{{ asset('img/fi-rr-sign-out.png') }}" alt="" width="15px" height="15px">
+                                        {{ __('Выйти') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

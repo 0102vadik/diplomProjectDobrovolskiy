@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root{
-    --primary: #7E4DFD;
-    --secondary: #5131a2;
+    --primary: #00528E;
+    --secondary: #007bd5;
     --white: #fff;
 }
 
@@ -30,4 +30,12 @@
 
 .nav-link:hover{
     color: var(--secondary);
+}
+
+.nav-link.create-link{
+    color: green;
+}
+
+.dropdown-item-container{
+    display: flex;
 }
