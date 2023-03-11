@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 @extends('layouts.app')
 
 @section('head_links')
@@ -8,28 +9,30 @@
 @section('content')
     <div class="container">
         <!-- For student -->
-        <header>
-            <div class="header-container">
-                <div class="header-title-container">
-                    <h2 class="header-title">
-                        Найди <span>свою работу</span> сегодня!
-                    </h2>
-                    <h3 class="header-subtitle">
-                        Сотни вакансий в компьютерной, инженерной и технологической сферах ждут вас.
-                    </h3>
-                </div>
-
-                <form action="">
-                    <div class="header-search">
-                        <input class="search-input" type="search" placeholder="Какую вакансию вы ищите?">
-                        <button class="search-btn" type="submit">Найти</button>
+        @if(Auth::user()->type_user == "Студент")
+            <header>
+                <div class="header-container">
+                    <div class="header-title-container">
+                        <h2 class="header-title">
+                            Найди <span>свою работу</span> сегодня!
+                        </h2>
+                        <h3 class="header-subtitle">
+                            Сотни вакансий в компьютерной, инженерной и технологической сферах ждут вас.
+                        </h3>
                     </div>
-                </form>
-            </div>
-        </header>
 
+                    <form action="">
+                        <div class="header-search">
+                            <input class="search-input" type="search" placeholder="Какую вакансию вы ищите?">
+                            <button class="search-btn" type="submit">Найти</button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+        @endif
         <!-- For company -->
-        <header style="display: none">
+        @if(Auth::user()->type_user == "Компания")
+        <header>
             <div class="header-container">
                 <div class="header-title-container">
                     <h2 class="header-title">
@@ -49,6 +52,7 @@
                 </form>
             </div>
         </header>
+        @endif
 
     </div>
     <main>
