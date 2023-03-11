@@ -29,4 +29,8 @@ Route::get('/register/company', function (){
     return view('forms.company');
 })->name('register-company');
 
+Route::get('/create-application', function (){
+    return view('pages.create-application');
+})->name('create-application');
+
 
