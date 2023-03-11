@@ -50,8 +50,10 @@ return [
         ],
 
         'mailgun' => [
-            'domain' => 'your-mailgun-domain',
-            'secret' => 'your-mailgun-key',
+            'transport' => 'mailgun',
+            // 'client' => [
+            //     'timeout' => 5,
+            // ],
         ],
 
         'postmark' => [
