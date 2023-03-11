@@ -99,7 +99,6 @@ main .application-content .application-filters {
     padding: 1rem;
     background: var(--white);
     width: 300px;
-    height: 100%;
     border-radius: 8px;
     border: 2px solid var(--sectionBorder);
 }
@@ -161,10 +160,23 @@ main .application-content .application-filters .filter-choose label {
     margin-left: 1.5rem;
 }
 
+.application-card .company-info .company-name-place{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .application-card .company-info .company-name{
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 150%;
+}
+
+.company-place{
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--textColorSecond);
 }
 
 .application-card .company-info .application-name{
@@ -176,14 +188,28 @@ main .application-content .application-filters .filter-choose label {
     color: var(--primary);
 }
 
-.application-card .company-info .application-langs{
+.application-card .company-info .application-price{
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--textColorSecond);
+}
+
+.application-card .company-info .application-langs-schedules{
+    display: flex;
+    justify-content: space-between;
+}
+
+.application-card .company-info .application-langs,
+.application-card .company-info .application-schedules{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: .5rem;
 }
 
-.application-card .company-info .application-langs .application-lang{
+.application-card .company-info .application-langs .application-lang,
+.application-card .company-info .application-schedules .application-schedule{
     padding: .25rem 1rem;
     border: 1px solid var(--border);
     border-radius: 8px;

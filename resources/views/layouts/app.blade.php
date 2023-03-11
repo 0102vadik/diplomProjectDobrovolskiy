@@ -26,9 +26,10 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand">
+            <a class="navbar-brand" href="{{ route("home") }}">
                 <img src="https://eu.bru.by/assets_config/BRU/img/logo-big.png" alt="app-logo" width="30em">
                 {{--{{ config('app.name', 'Laravel') }}--}}
+                <span>STUDENTS &<br>COMPANIES</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,12 +42,16 @@
                 @guest
                 @else
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">{{ __('Список вакансий') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">{{ __('Список анкет') }}</a>
-                        </li>
+                        @if(Auth::user()->type_user == "Студент")
+                            <li class="nav-item">
+                                <a href="{{ route("home") }}" class="nav-link">{{ __('Список вакансий') }}</a>
+                            </li>
+                        @endif
+                        @if(Auth::user()->type_user == "Компания")
+                            <li class="nav-item">
+                                <a href="{{ route("home") }}" class="nav-link">{{ __('Список анкет') }}</a>
+                            </li>
+                        @endif
                     </ul>
                 @endguest
 
@@ -56,24 +61,27 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Логин') }}</a>
+                                <a class="nav-link login" href="{{ route('login') }}">{{ __('Логин') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                                <a class="nav-link signup" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                             </li>
                         @endif
                     @else
+                        @if(Auth::user()->type_user == "Студент")
+                            <li class="nav-item">
+                                <a href="" class="nav-link login">{{ __('Cоздать анкету') }}</a>
+                            </li>
+                        @endif
+                        @if(Auth::user()->type_user == "Компания")
+                            <li class="nav-item">
+                                <a href="{{ route('create-application') }}" class="nav-link login">{{ __('Cоздать вакансию') }}</a>
+                            </li>
+                        @endif
 
-                        <li class="nav-item">
-                            <a href="" class="nav-link create-link">{{ __('Cоздать вакансию') }}</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="" class="nav-link create-link">{{ __('Cоздать анкету') }}</a>
-                        </li>
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -85,7 +93,8 @@
                                 <div class="dropdown-item-container">
 
                                     <a href="#" class="dropdown-item">
-                                        <img src="{{ asset('img/interface-icons/fi-rr-user.png') }}" alt="user-icon" width="15px"
+                                        <img src="{{ asset('img/interface-icons/fi-rr-user.png') }}" alt="user-icon"
+                                             width="15px"
                                              height="15px">
                                         {{ __('Личный кабинет') }}
                                     </a>
@@ -93,7 +102,8 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    <img src="{{ asset('img/interface-icons/fi-rr-sign-out.png') }}" alt="logout-icon" width="15px"
+                                    <img src="{{ asset('img/interface-icons/fi-rr-sign-out.png') }}" alt="logout-icon"
+                                         width="15px"
                                          height="15px">
                                     {{ __('Выйти') }}
                                 </a>
