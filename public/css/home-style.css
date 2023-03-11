@@ -35,7 +35,7 @@
     letter-spacing: .5px;
     border: 2px solid var(--border);
     color: var(--labelColor);
-    background: transparent url('../img/interface-icon/fi-rr-search.png') no-repeat 15px;
+    background: transparent url('../img/interface-icons/fi-rr-search.png') no-repeat 15px;
     padding: 0 10px 0 50px;
     border-radius: 8px 0 0 8px;
     transition: .7s;
