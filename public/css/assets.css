@@ -1,0 +1,12 @@
+.button{
+    /*float: right;*/
+    margin-top: 1rem;
+    color: var(--white);
+    background: var(--primary);
+    transition: .7s;
+}
+
+.button:hover{
+    color: var(--white);
+    background: var(--secondary);
+}

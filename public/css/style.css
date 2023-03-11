@@ -3,11 +3,36 @@
 :root{
     --primary: #00528E;
     --secondary: #007bd5;
+    --backgroud: #fafafa;
     --white: #fff;
+    --black: #000;
+    --textColor: #141414;
+    --labelColor: rgba(20, 20, 20, 0.5);
+    --border: rgba(20, 20, 20, 0.1);
+    --sectionBorder: rgba(20, 20, 20, 0.05);
+    --textColorSecond: #393F47;
 }
 
 *{
     font-family: 'Roboto', sans-serif;
+}
+
+body{
+     background: var(--white);
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.shadow-sm{
+    box-shadow: none !important;
+}
+
+.container{
+    margin: auto;
 }
 
 .navbar-brand{
@@ -39,3 +64,5 @@
 .dropdown-item-container{
     display: flex;
 }
+
+

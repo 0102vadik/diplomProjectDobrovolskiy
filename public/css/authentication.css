@@ -1,3 +1,8 @@
+.card{
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
 .form-control:focus{
     box-shadow: none;
     border-color: var(--primary);
@@ -64,5 +69,6 @@
 .btn-link:hover{
     color: var(--secondary);
 }
+
 
 
