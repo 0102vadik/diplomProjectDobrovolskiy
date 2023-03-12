@@ -83,12 +83,14 @@ class RegisterController extends Controller
                 'patronymic' => $data['patronymic'],
                 'group' => $data['group'],
                 'id_student' => $user->id,
+                'photo_src' => asset('img/company-icons/sample_user_icon.png')
             ]);
         } elseif ($data['type_user'] === 'Компания') {
             Company_info::create([
                 'company_name' => $data['name'],
                 'phone_contact' => $data['phone'],
                 'id_company' => $user->id,
+                'photo_src' => asset('img/company-icons/sample_user_icon.png')
             ]);
         } else {
             throw new Exception("Exception Error");

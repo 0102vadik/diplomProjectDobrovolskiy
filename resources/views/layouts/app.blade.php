@@ -73,7 +73,7 @@
                     @else
                         @if(Auth::user()->type_user == "Студент")
                             <li class="nav-item">
-                                <a href="" class="nav-link login">{{ __('Cоздать анкету') }}</a>
+                                <a href="{{route('create-application')}}" class="nav-link login">{{ __('Cоздать анкету') }}</a>
                             </li>
                         @endif
                         @if(Auth::user()->type_user == "Компания")

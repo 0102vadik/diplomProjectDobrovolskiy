@@ -19,7 +19,7 @@
                     <div>
                         <label class="custom-label" for="companyName">Название компании</label>
                         <input class="custom-input" type="text" name="companyName" id="companyName"
-                               value="Kabashov company" disabled>
+                               value="{{Auth::user()->name}}" disabled>
                     </div>
                     <div>
                         <label class="custom-label" for="companyPlace">Местонахождение</label>
