@@ -35,14 +35,18 @@ Route::get('/home/student',[VacanciesCompanyController::class, 'index'])->middle
 
 Route::get('/register/student', function (){
    return view('forms.student');
-})->name('register-student');
+})->name('register-student')->middleware('auth');
 
 Route::get('/register/company', function (){
     return view('forms.company');
-})->name('register-company');
+})->name('register-company')->middleware('auth');;
 
 Route::get('/create-application', function (){
     return view('pages.create-application');
-})->middleware('auth')->name('create-application');
+})->middleware('auth')->name('create-application')->middleware('auth');;
+
+Route::get('/create-student-form', function (){
+    return view('pages.create-student-form');
+})->name('create-student-form')->middleware('auth');;
 
 
