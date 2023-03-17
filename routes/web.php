@@ -45,8 +45,4 @@ Route::get('/create-application', function (){
     return view('pages.create-application');
 })->middleware('auth')->name('create-application')->middleware('auth');;
 
-Route::get('/create-student-form', function (){
-    return view('pages.create-student-form');
-})->name('create-student-form')->middleware('auth');;
-
 
