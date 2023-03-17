@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\IStudentsRepositories;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

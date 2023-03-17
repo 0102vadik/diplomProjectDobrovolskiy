@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Contracts\IStudentsRepositories;
+use App\Repositories\StudentRepositories;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,6 +15,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        /*$schedule->call(function (IStudentsRepositories $studentsRepositories){
+            $studentsRepositories->updateInfo();
+        })->everyMinute();*/
     }
 
     /**
