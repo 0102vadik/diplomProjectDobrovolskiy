@@ -158,6 +158,9 @@ main .application-content .application-filters .filter-choose label {
 
 .application-card .company-info{
     margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .application-card .company-info .company-name-place{
@@ -218,6 +221,10 @@ main .application-content .application-filters .filter-choose label {
     font-weight: 400;
     line-height: 150%;
     color: var(--textColorSecond);
+}
+
+.application-card .company-info .application-schedules .application-schedule{
+    margin-right: 0;
 }
 
 .application-card .company-info .application-description{
