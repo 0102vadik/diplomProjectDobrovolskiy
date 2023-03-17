@@ -1,0 +1,32 @@
+.profile-icon {
+    width: 144px;
+    height: 144px;
+    border-radius: 8px;
+    border: solid 2px var(--border);
+}
+
+main form .block {
+    margin-top: 1.25rem;
+}
+
+main form .second-block,
+main form .sixth-block,
+main form .fifth-block{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    main form .second-block,
+    main form .sixth-block,
+    main form .fifth-block {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .second-block div:nth-child(1),
+    .sixth-block div:nth-child(1),
+    .fifth-block div:nth-child(1) {
+        margin-bottom: 1.25rem;
+    }
+}

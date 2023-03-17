@@ -88,7 +88,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <div class="dropdown-item-container">
 
-                                    <a href="#" class="dropdown-item">
+                                    <a href="{{ route('my-profile') }}" class="dropdown-item">
                                         <img src="{{ asset('img/interface-icons/fi-rr-user.png') }}" alt="user-icon"
                                              width="15px"
                                              height="15px">

@@ -59,7 +59,8 @@ form button {
 
 @media (max-width: 768px) {
     main form .first-block,
-    main form .third-block {
+    main form .third-block
+    {
         grid-template-columns: repeat(1, 1fr);
     }
 

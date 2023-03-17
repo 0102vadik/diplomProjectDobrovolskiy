@@ -43,6 +43,10 @@ Route::get('/register/company', function (){
 
 Route::get('/create-application', function (){
     return view('pages.create-application');
-})->middleware('auth')->name('create-application')->middleware('auth');;
+})->middleware('auth')->name('create-application')->middleware('auth');
+
+Route::get('/my-profile', function (){
+    return view('pages.my-profile');
+})->middleware('auth')->name('my-profile')->middleware('auth');
 
 
