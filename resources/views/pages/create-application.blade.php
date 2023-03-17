@@ -48,7 +48,17 @@
                 <div class="third-block block">
                     <div>
                         <label class="custom-label" for="salary">Доход</label>
-                        <input class="custom-input" type="text" name="salary" id="salary">
+                        <div class="custom-select">
+                            <select name="" id="salary">
+                                <option selected value="0" hidden></option>
+                                <option value="fullDay"></option>
+                                <option value="shiftWork">Сменный график</option>
+                                <option value="flexibleSchedule">Гибкий график</option>
+                                <option value="distantWork">Удалённая работа</option>
+                            </select>
+                            <div class="select_arrow">
+                            </div>
+                        </div>
                     </div>
                     <div class="custom-select-container">
                         <label class="custom-label" for="schedule">График работы</label>

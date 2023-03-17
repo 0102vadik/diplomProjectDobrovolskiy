@@ -71,14 +71,10 @@
                             </li>
                         @endif
                     @else
-                        @if(Auth::user()->type_user == "Студент")
-                            <li class="nav-item">
-                                <a href="{{route('create-application')}}" class="nav-link login">{{ __('Cоздать анкету') }}</a>
-                            </li>
-                        @endif
                         @if(Auth::user()->type_user == "Компания")
                             <li class="nav-item">
-                                <a href="{{ route('create-application') }}" class="nav-link login">{{ __('Cоздать вакансию') }}</a>
+                                <a href="{{ route('create-application') }}"
+                                   class="nav-link login">{{ __('Cоздать вакансию') }}</a>
                             </li>
                         @endif
 
@@ -122,6 +118,7 @@
     {{--<main class="py-4">--}}
     @yield('content')
     {{--</main>--}}
+
 </div>
 </body>
 </html>
