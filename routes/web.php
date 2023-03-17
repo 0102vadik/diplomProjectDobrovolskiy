@@ -25,13 +25,13 @@ Route::get('/home', function(){
     if(Auth::user()->type_user == "Компания") {
         return redirect('/home/company');
     }
-    if(Auth::user()->type_user == "Компания") {
+    if(Auth::user()->type_user == "Студент") {
         return redirect('/home/student');
     }
-})->name('home');
+})->middleware('auth')->name('home');
 
-Route::get('/home/company',[VacanciesCompanyController::class, 'index']);
-Route::get('/home/student',[VacanciesCompanyController::class, 'index']);
+Route::get('/home/company',[VacanciesCompanyController::class, 'index'])->middleware('auth');
+Route::get('/home/student',[VacanciesCompanyController::class, 'index'])->middleware('auth');
 
 Route::get('/register/student', function (){
    return view('forms.student');
@@ -43,6 +43,6 @@ Route::get('/register/company', function (){
 
 Route::get('/create-application', function (){
     return view('pages.create-application');
-})->name('create-application');
+})->middleware('auth')->name('create-application');
 
 
