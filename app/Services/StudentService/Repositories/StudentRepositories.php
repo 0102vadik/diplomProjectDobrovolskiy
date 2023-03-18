@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Services\StudentService\Repositories;
 
 use App\Contracts\IStudentsRepositories;
 use App\Models\Student_info;
@@ -25,5 +25,10 @@ class StudentRepositories implements IStudentsRepositories
     public function updateStudent($studentId, array $newDetails)
     {
         Student_info::whereId($studentId)->update($newDetails);
+    }
+
+    public function getStudentsById(int $id)
+    {
+        return Student_info::find($id)->toArray();
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\CompanyModule;
+namespace App\Services\CompanyService;
 
 use App\Contracts\ICompanyRepositories;
-use App\Repositories\CompanyRepositories;
-use App\Repositories\StudentRepositories;
+use App\Services\CompanyService\Logical\Company;
+use App\Services\CompanyService\Repositories\CompanyRepositories;
 
 class CompanyService
 {

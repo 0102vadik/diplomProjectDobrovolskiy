@@ -1,14 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Vacancies;
 
-use App\Contracts\ICompanyRepositories;
-use App\Models\Student_info;
-use App\Models\Student_language;
-use App\Modules\CompanyModule\CompanyService;
-use App\Modules\StudentModule\Student;
-use App\Repositories\StudentRepositories;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Services\CompanyService\CompanyService;
 
 class VacanciesStudentController extends Controller
 {

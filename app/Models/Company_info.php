@@ -16,4 +16,6 @@ class Company_info extends Model
         'description',
         'logo_src',
     ];
+
+    protected $primaryKey = 'id_company';
 }

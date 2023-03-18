@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Modules\StudentModule;
+namespace App\Services\StudentService;
 
 use App\Contracts\IStudentsRepositories;
 use App\Models\Student_info;
-use App\Repositories\StudentRepositories;
+use App\Services\StudentService\Logical\Student;
+use App\Services\StudentService\Repositories\StudentRepositories;
 
 class StudentsService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Services\CompanyService\Repositories;
 
 use App\Contracts\ICompanyRepositories;
 use App\Models\Company_info;
@@ -26,5 +26,9 @@ class CompanyRepositories implements ICompanyRepositories
     public function updateCompany($companyId, array $newInfo)
     {
         Company_info::update($companyId,$newInfo);
+    }
+
+    public function getCompanyById(int $id){
+        return Company_info::find($id)->toArray();
     }
 }

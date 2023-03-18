@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Modules\CompanyModule;
+namespace App\Services\CompanyService\Logical;
 
-use App\Contracts\ICompany\ICompany;
 use App\Contracts\IQuestionnaire;
 use Mockery\Exception;
 

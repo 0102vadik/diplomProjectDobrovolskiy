@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\VacanciesCompanyController;
-use App\Http\Controllers\VacanciesStudentController;
+use App\Http\Controllers\Profile\MyProfileController;
+use App\Http\Controllers\Vacancies\VacanciesCompanyController;
+use App\Http\Controllers\Vacancies\VacanciesStudentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,8 +47,19 @@ Route::get('/create-application', function (){
     return view('pages.create-application');
 })->middleware('auth')->name('create-application')->middleware('auth');
 
-Route::get('/my-profile', function (){
+Route::get('/my-profile/company', function (){
     return view('pages.my-profile');
 })->middleware('auth')->name('my-profile')->middleware('auth');
 
+Route::get('/my-profile', function(){
+    if(Auth::user()->type_user == "Компания") {
+        return redirect('/my-profile/company');
+    }
+    if(Auth::user()->type_user == "Студент") {
+        return redirect('/my-profile/students');
+    }
+})->middleware('auth')->name('my-profile');
+
+Route::get('/my-profile/students', [MyProfileController::class,'indexStudents'])->middleware('auth');
+Route::get('/my-profile/company', [MyProfileController::class,'indexCompany'])->middleware('auth');
 

@@ -2,8 +2,6 @@
 
 namespace App\Console;
 
-use App\Contracts\IStudentsRepositories;
-use App\Repositories\StudentRepositories;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

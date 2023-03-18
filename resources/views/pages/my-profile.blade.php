@@ -19,7 +19,7 @@
                 <form method="post" enctype="multipart/form-data">
                     <div class="first-block block">
                         <div>
-                            <img class="profile-icon" src="{{ asset('img/company-icons/sample_user_icon.png') }}"
+                            <img class="profile-icon" src="{{ asset($information['logo_src']) }}"
                                  alt="company-icon">
                         </div>
                         <div class="custom-image-upload-wrapper">
@@ -41,11 +41,11 @@
                         <div>
                             <label class="custom-label" for="companyName">Название компании</label>
                             <input class="custom-input" type="text" name="companyName" id="companyName"
-                                   value="{{Auth::user()->name}}" required>
+                                   value="{{$information['company_name']}}" required>
                         </div>
                         <div>
                             <label class="custom-label" for="companyPlace">Местонахождение</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace">
+                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['city']}}">
                         </div>
                         {{--<div>
                             <label class="custom-label" for="salary">Доход</label>
@@ -96,7 +96,7 @@
                         </div>
                         <div>
                             <label class="custom-label" for="phone">Контактный телефон</label>
-                            <input class="custom-input" type="tel" name="phone" id="companyName" required>
+                            <input class="custom-input" type="tel" name="phone" id="companyName" value="{{$information['phone_contact']}}" required>
                         </div>
                     </div>
                     <div class="forth-block block">
@@ -134,7 +134,7 @@
                         <div>
                             <label class="custom-label" for="description">Описание</label>
                             <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                      rows="10"></textarea>
+                                      rows="10">{{$information['description']}}</textarea>
                         </div>
                     </div>
                     <button class="btn button">Сохранить изменения</button>
@@ -145,7 +145,7 @@
                 <form method="post" enctype="multipart/form-data">
                     <div class="first-block block">
                         <div>
-                            <img class="profile-icon" src="{{ asset('img/company-icons/sample_user_icon.png') }}"
+                            <img class="profile-icon" src="{{ asset($information['photo_src']) }}"
                                  alt="company-icon">
                         </div>
                         <div>
@@ -160,13 +160,13 @@
                     <div class="second-block block">
                         <div>
 
-                            <label class="custom-label" for="companyName">ФИО</label>
+                            <label class="custom-label" for="companyName">{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}</label>
                             <input class="custom-input" type="text" name="companyName" id="companyName"
-                                   value="{{Auth::user()->name}}">
+                                   value="{{$information['name']}}">
                         </div>
                         <div>
                             <label class="custom-label" for="companyPlace">Город проживания</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace">
+                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['city']}}">
                         </div>
                     </div>
                     <div class="block">
@@ -253,18 +253,18 @@
                     <div class="sixth-block block">
                         <div>
                             <label class="custom-label" for="companyPlace">Курс</label>
-                            <input class="custom-input" type="number" name="companyPlace" id="companyPlace">
+                            <input class="custom-input" type="number" name="companyPlace" id="companyPlace" value="{{$information['course']}}">
                         </div>
                         <div>
                             <label class="custom-label" for="companyPlace">Группа</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace">
+                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['group']}}">
                         </div>
                     </div>
                     <div class="block">
                         <div>
                             <label class="custom-label" for="description">Описание</label>
                             <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                      rows="10"></textarea>
+                                      rows="10">{{$information['description']}}</textarea>
                         </div>
                     </div>
                     <button class="btn button">Сохранить изменения</button>

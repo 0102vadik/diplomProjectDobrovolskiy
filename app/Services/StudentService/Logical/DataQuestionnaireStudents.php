@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\StudentModule;
+namespace App\Services\StudentService\Logical;
 
 use App\Contracts\IQuestionnaire;
 
