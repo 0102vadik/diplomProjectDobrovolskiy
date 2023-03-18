@@ -13,9 +13,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- JQuery -->
+    <script src="{{ asset('js/jQuery 3.6.4.js') }}"></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{--<script src="{{ asset('js/image-upload.js') }}"></script>--}}
 
     <!-- CSS -->
     @yield('head_links')
@@ -118,6 +121,10 @@
     {{--<main class="py-4">--}}
     @yield('content')
     {{--</main>--}}
+
+    <!-- Custom scripts -->
+
+    <script src="{{ asset('js/image-upload.js') }}"></script>
 
 </div>
 </body>
