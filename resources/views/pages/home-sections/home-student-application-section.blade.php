@@ -181,17 +181,17 @@
             @foreach($arrayObject as $object)
                 <article class="application-card">
                     <div class="company-icon">
-                        <img src="{{ asset($object->getDataQuestionnaire()->getPhotoSrc())}}" alt="company-icon">
+                        <img src="{{ asset($object->getLogoSrc())}}" alt="company-icon">
                     </div>
                     <div class="company-info">
                         <div class="company-name-place">
                             <div class="company-name">
-                                {{$object->getDataQuestionnaire()->getSurname()}} {{$object->getDataQuestionnaire()->getName()}} {{$object->getDataQuestionnaire()->getPatronymic()}}
+                                {{$object->getNameCompany()}}
                             </div>
                             <div class="company-place">
                                 <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
                                      width="15px">
-                                {{$object->getDataQuestionnaire()->getCity()}}
+                                {{$object->getCity()}}
                             </div>
                         </div>
                         <div class="application-name">
@@ -202,16 +202,16 @@
                         </div>
                         <div class="application-langs-schedules">
                             <div class="application-langs">
-                                @foreach($object->getArrayLanguages() as $language)
-                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>
-                                @endforeach
+{{--                                @foreach($object->getArrayLanguages() as $language)--}}
+{{--                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>--}}
+{{--                                @endforeach--}}
                             </div>
                             <div class="application-schedules">
                                 <div class="application-schedule">Полный день</div>
                             </div>
                         </div>
                         <div class="application-description">
-                            {{$object->getDataQuestionnaire()->getDescription()}}
+                            {{$object->getDescription()}}
                         </div>
                         <div class="application-btn">
                             <button class="button btn">Подробнее</button>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VacanciesCompanyController;
+use App\Http\Controllers\VacanciesStudentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,7 @@ Route::get('/home', function(){
 })->middleware('auth')->name('home');
 
 Route::get('/home/company',[VacanciesCompanyController::class, 'index'])->middleware('auth');
-Route::get('/home/student',[VacanciesCompanyController::class, 'index'])->middleware('auth');
+Route::get('/home/student',[VacanciesStudentController::class, 'index'])->middleware('auth');
 
 Route::get('/register/student', function (){
    return view('forms.student');
