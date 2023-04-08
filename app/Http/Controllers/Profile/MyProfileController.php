@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateStudentPostRequest;
 use App\Services\CompanyService\Repositories\CompanyRepositories;
 use App\Services\StudentService\Repositories\StudentRepositories;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MyProfileController extends Controller
 {
@@ -33,5 +36,19 @@ class MyProfileController extends Controller
         return view('pages.my-profile', [
             'information' => $this->companyRepositories->getCompanyById(Auth::id())
         ]);
+    }
+
+    public function updateProfileStudent(UpdateStudentPostRequest $request){
+        if ( $request->file( 'imgAvatar' ) ) {
+            $path      = Storage::putFile( 'public', $request->file( 'imgAvatar' ) );
+            $url       = Storage::url( $path );
+            $this->studentRepositories->updatePhoto(Auth::id(),$url);
+        }
+        $this->studentRepositories->updateStudent(Auth::id(),$request->toArray());
+        return redirect('/my-profile');
+    }
+
+    public function updateProfileCompany(Request $request){
+
     }
 }

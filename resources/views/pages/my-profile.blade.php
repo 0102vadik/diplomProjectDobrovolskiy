@@ -16,7 +16,9 @@
     <main>
         <div class="container">
             @if(Auth::user()->type_user == "Компания")
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data"
+                      action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}">
+                    @csrf
                     <div class="first-block block">
                         <div>
                             <img class="profile-icon" src="{{ asset($information['logo_src']) }}"
@@ -45,7 +47,8 @@
                         </div>
                         <div>
                             <label class="custom-label" for="companyPlace">Местонахождение</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['city']}}">
+                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace"
+                                   value="{{$information['city']}}">
                         </div>
                         {{--<div>
                             <label class="custom-label" for="salary">Доход</label>
@@ -96,7 +99,8 @@
                         </div>
                         <div>
                             <label class="custom-label" for="phone">Контактный телефон</label>
-                            <input class="custom-input" type="tel" name="phone" id="companyName" value="{{$information['phone_contact']}}" required>
+                            <input class="custom-input" type="tel" name="phone" id="companyName"
+                                   value="{{$information['phone_contact']}}" required>
                         </div>
                     </div>
                     <div class="forth-block block">
@@ -142,16 +146,20 @@
             @endif
 
             @if(Auth::user()->type_user == "Студент")
-                <form method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data"
+                      action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}">
+
+                    @csrf
                     <div class="first-block block">
                         <div>
-                            <img class="profile-icon" src="{{ asset($information['photo_src']) }}"
+                            <img class="profile-icon"
+                                 src="{{ asset($information['photo_src']) }}"
                                  alt="company-icon">
                         </div>
                         <div>
                             <label class="custom-label" for="salary">Загрузка изображения</label>
                             <div>
-                                <input type="file" name="photo" multiple accept="image/jpeg,image/png">
+                                <input type="file" id="imgAvatar" name="imgAvatar" multiple accept="image/jpeg,image/png">
                                 <span>Доступные типы файлов: jpeg, png</span>
                             </div>
                         </div>
@@ -160,13 +168,15 @@
                     <div class="second-block block">
                         <div>
 
-                            <label class="custom-label" for="companyName">{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}</label>
-                            <input class="custom-input" type="text" name="companyName" id="companyName"
+                            <label class="custom-label"
+                                   for="studentName">{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}</label>
+                            <input class="custom-input" type="text" name="studentName" id="studentName"
                                    value="{{$information['name']}}">
                         </div>
                         <div>
-                            <label class="custom-label" for="companyPlace">Город проживания</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['city']}}">
+                            <label class="custom-label" for="studentPlace">Город проживания</label>
+                            <input class="custom-input" type="text" name="studentPlace" id="studentPlace"
+                                   value="{{$information['city']}}">
                         </div>
                     </div>
                     <div class="block">
@@ -252,12 +262,14 @@
                     </div>
                     <div class="sixth-block block">
                         <div>
-                            <label class="custom-label" for="companyPlace">Курс</label>
-                            <input class="custom-input" type="number" name="companyPlace" id="companyPlace" value="{{$information['course']}}">
+                            <label class="custom-label" for="studentPlace">Курс</label>
+                            <input class="custom-input" type="number" name="studentCourse" id="studentCourse"
+                                   value="{{$information['course']}}">
                         </div>
                         <div>
-                            <label class="custom-label" for="companyPlace">Группа</label>
-                            <input class="custom-input" type="text" name="companyPlace" id="companyPlace" value="{{$information['group']}}">
+                            <label class="custom-label" for="studentPlace">Группа</label>
+                            <input class="custom-input" type="text" name="studentGroup" id="studentGroup"
+                                   value="{{$information['group']}}">
                         </div>
                     </div>
                     <div class="block">
@@ -267,7 +279,7 @@
                                       rows="10">{{$information['description']}}</textarea>
                         </div>
                     </div>
-                    <button class="btn button">Сохранить изменения</button>
+                    <button class="btn button" type="submit">Сохранить изменения</button>
                 </form>
             @endif
         </div>

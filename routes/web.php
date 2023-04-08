@@ -63,3 +63,5 @@ Route::get('/my-profile', function(){
 Route::get('/my-profile/students', [MyProfileController::class,'indexStudents'])->middleware('auth');
 Route::get('/my-profile/company', [MyProfileController::class,'indexCompany'])->middleware('auth');
 
+Route::post('/my-profile/update/company', [MyProfileController::class,'updateProfileCompany'])->middleware('auth')->name('updateProfileCompany');
+Route::post('/my-profile/update/students', [MyProfileController::class,'updateProfileStudent'])->middleware('auth')->name('updateProfileStudents');

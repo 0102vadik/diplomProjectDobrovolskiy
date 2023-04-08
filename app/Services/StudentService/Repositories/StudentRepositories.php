@@ -24,7 +24,17 @@ class StudentRepositories implements IStudentsRepositories
 
     public function updateStudent($studentId, array $newDetails)
     {
-        Student_info::whereId($studentId)->update($newDetails);
+        Student_info::where('id_student',$studentId)->update([
+            'name' => $newDetails['studentName'],
+            'description'=> $newDetails['description']
+
+        ]);
+    }
+
+    public function updatePhoto(int $studentId,string $src){
+        Student_info::where('id_student',$studentId)->update([
+            'photo_src' => $src
+        ]);
     }
 
     public function getStudentsById(int $id)
