@@ -23,9 +23,18 @@ class CompanyRepositories implements ICompanyRepositories
         Company_info::create($companyInfo);
     }
 
-    public function updateCompany($companyId, array $newInfo)
+    public function updateCompany($companyId, array $newDetails)
     {
-        Company_info::update($companyId,$newInfo);
+        Company_info::where('id_company',$companyId)->update([
+            'company_name' => $newDetails['companyName'],
+            'description'=> $newDetails['description']
+        ]);
+    }
+
+    public function updateLogo(int $companyId,string $src){
+        Company_info::where('id_company',$companyId)->update([
+            'logo_src' => $src
+        ]);
     }
 
     public function getCompanyById(int $id){

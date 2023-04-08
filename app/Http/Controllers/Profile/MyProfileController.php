@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateStudentPostRequest;
 use App\Services\CompanyService\Repositories\CompanyRepositories;
 use App\Services\StudentService\Repositories\StudentRepositories;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -49,6 +49,12 @@ class MyProfileController extends Controller
     }
 
     public function updateProfileCompany(Request $request){
-
+        if ( $request->file( 'imgLogo' ) ) {
+            $path      = Storage::putFile( 'public', $request->file( 'imgLogo' ) );
+            $url       = Storage::url( $path );
+            $this->companyRepositories->updateLogo(Auth::id(),$url);
+        }
+        $this->companyRepositories->updateCompany(Auth::id(),$request->toArray());
+        return redirect('/my-profile');
     }
 }

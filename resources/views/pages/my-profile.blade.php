@@ -25,15 +25,10 @@
                                  alt="company-icon">
                         </div>
                         <div class="custom-image-upload-wrapper">
-                            {{--<label class="custom-label" for="salary">Загрузка изображения</label>
-                            <div>
-                                <input type="file" name="photo" multiple accept="image/jpeg,image/png">
-                                <span>Доступные типы файлов: jpeg, png</span>
-                            </div>--}}
                             <label class="custom-label">Загрузка изображения</label>
                             <label class="custom-image-upload">
                                 <span class="custom-image-upload-text" type="text"></span>
-                                <input type="file" name="photo" accept="image/jpeg,image/png">
+                                <input type="file" name="imgLogo" accept="image/jpeg,image/png">
                                 <span class="{{--custom-image-upload-btn--}} btn button">Выберите файл</span>
                             </label>
                         </div>
@@ -141,7 +136,7 @@
                                       rows="10">{{$information['description']}}</textarea>
                         </div>
                     </div>
-                    <button class="btn button">Сохранить изменения</button>
+                    <button class="btn button" type="submit">Сохранить изменения</button>
                 </form>
             @endif
 
