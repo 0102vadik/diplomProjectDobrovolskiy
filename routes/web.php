@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Profile\MyProfileController;
+use App\Http\Controllers\StudentApplicationController;
 use App\Http\Controllers\Vacancies\VacanciesCompanyController;
 use App\Http\Controllers\Vacancies\VacanciesStudentController;
 use Illuminate\Support\Facades\Auth;
@@ -62,6 +63,8 @@ Route::get('/my-profile', function(){
 
 Route::get('/my-profile/students', [MyProfileController::class,'indexStudents'])->middleware('auth');
 Route::get('/my-profile/company', [MyProfileController::class,'indexCompany'])->middleware('auth');
+
+//Route::post('/applicationCreate/{idCompany}', [StudentApplicationController::class,'sandApplication'])->middleware('auth');
 
 Route::post('/my-profile/update/company', [MyProfileController::class,'updateProfileCompany'])->middleware('auth')->name('updateProfileCompany');
 Route::post('/my-profile/update/students', [MyProfileController::class,'updateProfileStudent'])->middleware('auth')->name('updateProfileStudents');

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id_application');
             $table->bigInteger('id_student')->unsigned();
             $table->bigInteger('id_company')->unsigned();
+            $table->string('header',255);
             $table->text('message');
             $table->string('status');
             $table->timestamps();
