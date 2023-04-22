@@ -153,11 +153,16 @@
                         </div>
                         <div>
                             <label class="custom-label" for="salary">Загрузка изображения</label>
-                            <div>
+                            {{--<div>
                                 <input type="file" id="imgAvatar" name="imgAvatar" multiple
                                        accept="image/jpeg,image/png">
                                 <span>Доступные типы файлов: jpeg, png</span>
-                            </div>
+                            </div>--}}
+                            <label class="custom-image-upload">
+                                <span class="custom-image-upload-text" type="text"></span>
+                                <input type="file" id="imgAvatar" name="imgAvatar" multiple accept="image/jpeg,image/png">
+                                <span class="{{--custom-image-upload-btn--}} btn button">Выберите файл</span>
+                            </label>
                         </div>
                     </div>
 
