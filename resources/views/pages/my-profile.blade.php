@@ -153,11 +153,6 @@
                         </div>
                         <div>
                             <label class="custom-label" for="salary">Загрузка изображения</label>
-                            {{--<div>
-                                <input type="file" id="imgAvatar" name="imgAvatar" multiple
-                                       accept="image/jpeg,image/png">
-                                <span>Доступные типы файлов: jpeg, png</span>
-                            </div>--}}
                             <label class="custom-image-upload">
                                 <span class="custom-image-upload-text" type="text"></span>
                                 <input type="file" id="imgAvatar" name="imgAvatar" multiple accept="image/jpeg,image/png">
@@ -166,20 +161,33 @@
                         </div>
                     </div>
 
-                    <div class="second-block block">
+                    <div class="name-block block">
                         <div>
                             <label class="custom-label"
-                                   for="studentName">ФИО</label>
-                            <input class="custom-input" type="text" name="studentName" id="studentName"
-                                   value="{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}">
+                                   for="studentSurname">Фамилия</label>
+                            <input class="custom-input" type="text" name="studentName" id="studentSurname"
+                                   value="{{$information['surname']}}">
                         </div>
+                        <div>
+                            <label class="custom-label"
+                                   for="studentName">Имя</label>
+                            <input class="custom-input" type="text" name="studentName" id="studentName"
+                                   value="{{$information['name']}}">
+                        </div>
+                        <div>
+                            <label class="custom-label"
+                                   for="studentPatronymic">Отчество</label>
+                            <input class="custom-input" type="text" name="studentName" id="studentPatronymic"
+                                   value="{{$information['patronymic']}}">
+                        </div>
+                    </div>
+
+                    <div class="second-block block">
                         <div>
                             <label class="custom-label" for="studentPlace">Город проживания</label>
                             <input class="custom-input" type="text" name="studentPlace" id="studentPlace"
                                    value="{{$information['city']}}">
                         </div>
-                    </div>
-                    <div class="block">
                         <div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
@@ -197,6 +205,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="block">
+
                     </div>
                     <div class="fourth-block block">
                         <div>

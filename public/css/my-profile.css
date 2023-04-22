@@ -10,6 +10,12 @@ main form .block {
     margin-top: 1.25rem;
 }
 
+main form .name-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+}
+
 main form .second-block,
 main form .sixth-block,
 main form .fifth-block{
@@ -21,13 +27,16 @@ main form .fifth-block{
 @media (max-width: 768px) {
     main form .second-block,
     main form .sixth-block,
-    main form .fifth-block {
+    main form .fifth-block,
+    main form .name-block{
         grid-template-columns: repeat(1, 1fr);
     }
 
     .second-block div:nth-child(1),
     .sixth-block div:nth-child(1),
-    .fifth-block div:nth-child(1) {
+    .fifth-block div:nth-child(1),
+    .name-block div:nth-child(1),
+    .name-block div:nth-child(2){
         margin-bottom: 1.25rem;
     }
 }
