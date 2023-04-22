@@ -141,7 +141,7 @@
                                       rows="10" disabled>{{--{{$information['description']}}--}}</textarea>
                         </div>
                     </div>
-                    <button class="btn button" type="submit">Сохранить изменения</button>
+                    <button class="btn button" type="submit">Отправить заявку</button>
                 </form>
             @endif
 
