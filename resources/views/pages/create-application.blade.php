@@ -15,67 +15,63 @@
     <main>
         <div class="container">
             <form method="post">
-                <div class="first-block block">
+                <div class="block">
                     <div>
-                        <label class="custom-label" for="companyName">Название компании</label>
-                        <input class="custom-input" type="text" name="companyName" id="companyName"
+                        <label class="custom-label" for="header">Заголовок</label>
+                        <input class="custom-input" type="text" name="header" id="header"
                                value="{{Auth::user()->name}}" disabled>
                     </div>
-                    <div>
+                    {{--<div>
                         <label class="custom-label" for="companyPlace">Местонахождение</label>
                         <input class="custom-input" type="text" name="companyPlace" id="companyPlace">
-                    </div>
+                    </div>--}}
                 </div>
-                <div class="second-block block">
-                    <div class="custom-select-container">
-                        <label class="custom-label" for="specialization">Специализация</label>
-                        <div class="custom-select">
-                            <select name="" id="specialization">
-                                <option selected value="0" hidden></option>
-                                <option value="frontend">Front-end разработчик</option>
-                                <option value="backend">Back-end разработчик</option>
-                                <option value="fullstack">Fullstack разработчик</option>
-                                <option value="game">Разработчик игр</option>
-                                <option value="mobile">Разработчик моб. приложений</option>
-                                <option value="tester">Тестировщик</option>
-                                <option value="projectManager">Менеджер проекта</option>
-                            </select>
-                            <div class="select_arrow">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="third-block block">
+                <div class="fifth-block block">
                     <div>
-                        <label class="custom-label" for="salary">Доход</label>
-                        <div class="custom-select">
-                            <select name="" id="salary">
-                                <option selected value="0" hidden></option>
-                                <option value="fullDay"></option>
-                                <option value="shiftWork">Сменный график</option>
-                                <option value="flexibleSchedule">Гибкий график</option>
-                                <option value="distantWork">Удалённая работа</option>
-                            </select>
-                            <div class="select_arrow">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="custom-select-container">
-                        <label class="custom-label" for="schedule">График работы</label>
-                        <div class="custom-select">
-                            <select name="" id="schedule">
-                                <option selected value="0" hidden></option>
-                                <option value="fullDay">Полный день</option>
-                                <option value="shiftWork">Сменный график</option>
-                                <option value="flexibleSchedule">Гибкий график</option>
-                                <option value="distantWork">Удалённая работа</option>
-                            </select>
-                            <div class="select_arrow">
-                            </div>
-                        </div>
+                        <label class="custom-label" for="description">Описание</label>
+                        <textarea class="custom-textarea" name="description" id="description" cols="30"
+                                  rows="10"></textarea>
                     </div>
                 </div>
-                <div class="forth-block block">
+                {{--                <div class="second-block block">--}}
+                {{--                    <div class="custom-select-container">--}}
+                {{--                        <label class="custom-label" for="specialization">Специализация</label>--}}
+                {{--                        <div class="custom-select">--}}
+                {{--                            <select name="" id="specialization">--}}
+                {{--                                <option selected value="0" hidden></option>--}}
+                {{--                                <option value="frontend">Front-end разработчик</option>--}}
+                {{--                                <option value="backend">Back-end разработчик</option>--}}
+                {{--                                <option value="fullstack">Fullstack разработчик</option>--}}
+                {{--                                <option value="game">Разработчик игр</option>--}}
+                {{--                                <option value="mobile">Разработчик моб. приложений</option>--}}
+                {{--                                <option value="tester">Тестировщик</option>--}}
+                {{--                                <option value="projectManager">Менеджер проекта</option>--}}
+                {{--                            </select>--}}
+                {{--                            <div class="select_arrow">--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                <div class="third-block block">
+                    <div class="custom-select-container">
+                        <label class="custom-label" for="type">Тип</label>
+                        <div class="custom-select">
+                            <select name="type" id="type">
+                                <option selected value="0" hidden></option>
+                                <option value="internship">Стажировка</option>
+                                <option value="practice">Практика</option>
+                                <option value="work">Работа</option>
+                            </select>
+                            <div class="select_arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="custom-label" for="expirationDate">До какого действительна</label>
+                        <input class="custom-input" type="date" name="expirationDate" id="expirationDate" min="{{ date("Y-m-d") }}">
+                    </div>
+                </div>
+                {{--<div class="forth-block block">
                     <div>
                         <label class="custom-label" for="salary">Языки программирования</label>
                         <div class="langs">
@@ -105,14 +101,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="fifth-block block">
-                    <div>
-                        <label class="custom-label" for="description">Описание</label>
-                        <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                  rows="10"></textarea>
-                    </div>
-                </div>
+                </div>--}}
                 <button class="btn button">Создать вакансию</button>
             </form>
         </div>
