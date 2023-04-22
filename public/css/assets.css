@@ -6,10 +6,19 @@
     transition: .7s;
 }
 
+.button.danger{
+    background: #8e0000;
+}
+
 .button:hover,
 .button:active {
     color: var(--white);
     background: var(--secondary);
+}
+
+.button.danger:hover,
+.button.danger:active{
+    background: #d50000;
 }
 
 .custom-select {
