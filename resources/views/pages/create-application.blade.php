@@ -18,8 +18,7 @@
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>
-                        <input class="custom-input" type="text" name="header" id="header"
-                               value="{{Auth::user()->name}}" disabled>
+                        <input class="custom-input" type="text" name="header" id="header">
                     </div>
                     {{--<div>
                         <label class="custom-label" for="companyPlace">Местонахождение</label>
