@@ -94,7 +94,7 @@
                         </div>
                         <div>
                             <label class="custom-label" for="phone">Контактный телефон</label>
-                            <input class="custom-input" type="tel" name="phone" id="companyName"
+                            <input class="custom-input" type="tel" name="companyPhone" id="companyPhone"
                                    value="{{$information['phone_contact']}}" required>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         <div>
                             <label class="custom-label"
                                    for="studentSurname">Фамилия</label>
-                            <input class="custom-input" type="text" name="studentName" id="studentSurname"
+                            <input class="custom-input" type="text" name="studentSurname" id="studentSurname"
                                    value="{{$information['surname']}}">
                         </div>
                         <div>
@@ -177,7 +177,7 @@
                         <div>
                             <label class="custom-label"
                                    for="studentPatronymic">Отчество</label>
-                            <input class="custom-input" type="text" name="studentName" id="studentPatronymic"
+                            <input class="custom-input" type="text" name="studentPatronymic" id="studentPatronymic"
                                    value="{{$information['patronymic']}}">
                         </div>
                     </div>
@@ -191,15 +191,15 @@
                         <div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
-                                <select name="" id="specialization">
-                                    <option selected value="0" hidden></option>
-                                    <option value="frontend">Front-end разработчик</option>
-                                    <option value="backend">Back-end разработчик</option>
-                                    <option value="fullstack">Fullstack разработчик</option>
-                                    <option value="game">Разработчик игр</option>
-                                    <option value="mobile">Разработчик моб. приложений</option>
-                                    <option value="tester">Тестировщик</option>
-                                    <option value="projectManager">Менеджер проекта</option>
+                                <select name="specialization" id="specialization">
+                                    <option selected value="{{$information['specialization'] ?? ""}}" name="specialization" hidden>{{$information['specialization'] ?? ""}}</option>
+                                    <option  value="Front-end разработчик">Front-end разработчик</option>
+                                    <option  value="Back-end разработчик">Back-end разработчик</option>
+                                    <option  value="Fullstack разработчик">Fullstack разработчик</option>
+                                    <option  value="Разработчик игр">Разработчик игр</option>
+                                    <option  value="Разработчик моб. приложений">Разработчик моб. приложений</option>
+                                    <option  value="Тестировщик">Тестировщик</option>
+                                    <option  value="Менеджер проекта">Менеджер проекта</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -244,13 +244,13 @@
                         <div>
                             <label class="custom-label" for="salary">Предпочитаемый доход</label>
                             <div class="custom-select">
-                                <select name="" id="salary">
-                                    <option selected value="notDefined">Доход не указан</option>
-                                    <option value="from500">От 500 руб.</option>
-                                    <option value="from1000">От 1000 руб.</option>
-                                    <option value="from1500">От 1500 руб.</option>
-                                    <option value="from2000">От 2000 руб.</option>
-                                    <option value="from2500">От 2500 руб.</option>
+                                <select name="preferredIncome" id="salary">
+                                    <option selected value="{{$information['preferred_income'] ??"Доход не указан"}}">{{$information['preferred_income'] ??"Доход не указан"}}</option>
+                                    <option value="От 500 руб.">От 500 руб.</option>
+                                    <option value="От 1000 руб.">От 1000 руб.</option>
+                                    <option value="От 1500 руб.">От 1500 руб.</option>
+                                    <option value="От 2000 руб.">От 2000 руб.</option>
+                                    <option value="От 2500 руб.">От 2500 руб.</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -259,12 +259,12 @@
                         <div class="custom-select-container">
                             <label class="custom-label" for="schedule">Предпочитаемый график работы</label>
                             <div class="custom-select">
-                                <select name="" id="schedule">
-                                    <option selected value="0" hidden></option>
-                                    <option value="fullDay">Полный день</option>
-                                    <option value="shiftWork">Сменный график</option>
-                                    <option value="flexibleSchedule">Гибкий график</option>
-                                    <option value="distantWork">Удалённая работа</option>
+                                <select name="preferredSchedule" id="schedule">
+                                    <option selected value="{{$information['preferred_schedule'] ??""}}" hidden>{{$information['preferred_schedule'] ??""}}</option>
+                                    <option value="Полный день">Полный день</option>
+                                    <option value="Сменный график">Сменный график</option>
+                                    <option value="Гибкий график">Гибкий график</option>
+                                    <option value="Удалённая работа">Удалённая работа</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>

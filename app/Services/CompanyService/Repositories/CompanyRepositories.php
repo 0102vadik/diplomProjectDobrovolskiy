@@ -27,7 +27,9 @@ class CompanyRepositories implements ICompanyRepositories
     {
         Company_info::where('id_company',$companyId)->update([
             'company_name' => $newDetails['companyName'],
-            'description'=> $newDetails['description']
+            'description'=> $newDetails['description'],
+            'phone_contact'=> $newDetails['companyPhone'],
+            'city'=> $newDetails['companyPlace'],
         ]);
     }
 
