@@ -36,6 +36,10 @@ Route::get('/home', function(){
 Route::get('/home/company',[VacanciesCompanyController::class, 'index'])->middleware('auth');
 Route::get('/home/student',[VacanciesStudentController::class, 'index'])->middleware('auth');
 
+Route::get('/home/student', function (){
+    return view('pages.application-more');
+})->name('more-company');
+
 Route::get('/register/student', function (){
    return view('forms.student');
 })->name('register-student');

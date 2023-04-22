@@ -49,10 +49,16 @@
                             <li class="nav-item">
                                 <a href="{{ route("home") }}" class="nav-link">{{ __('Список вакансий') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route("home") }}" class="nav-link">{{ __('Мои заявки') }}</a>
+                            </li>
                         @endif
                         @if(Auth::user()->type_user == "Компания")
                             <li class="nav-item">
                                 <a href="{{ route("home") }}" class="nav-link">{{ __('Список анкет') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route("home") }}" class="nav-link">{{ __('Мои вакансии') }}</a>
                             </li>
                         @endif
                     </ul>

@@ -214,7 +214,7 @@
                             {{$object->getDescription()}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn">Подробнее</button>
+                            <button class="button btn" onclick="window.location.href='{{ route("more-company") }}'">Подробнее</button>
                         </div>
                     </div>
                 </article>
