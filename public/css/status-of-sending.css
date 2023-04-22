@@ -1,0 +1,28 @@
+main .container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert{
+    background: #D4EDDA;
+    padding: 50px;
+    color: #155724;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert .alert-icon img{
+    width: 50px;
+}
+
+.alert .alert-header-text{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.alert .button{
+    background: #155724;
+}
