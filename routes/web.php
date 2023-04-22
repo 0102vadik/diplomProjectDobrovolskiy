@@ -36,9 +36,23 @@ Route::get('/home', function(){
 Route::get('/home/company',[VacanciesCompanyController::class, 'index'])->middleware('auth');
 Route::get('/home/student',[VacanciesStudentController::class, 'index'])->middleware('auth');
 
+// ВРЕМЕННЫЕ РОУТЫ
 Route::get('/home/student/more', function (){
     return view('pages.application-more');
 })->name('more-company');
+
+Route::get('/home/student/more/send-application', function (){
+    return view('pages.send-application');
+})->name('send-application');
+
+Route::get('/home/student/more/send-application/success', function (){
+    return view('pages.status-of-sending.send-application-success');
+})->name('success');
+
+Route::get('/my-applications', function (){
+    return view('pages.my-application');
+})->name('my-applications');
+//-----------------
 
 Route::get('/register/student', function (){
    return view('forms.student');

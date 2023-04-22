@@ -21,9 +21,9 @@
     <main>
         <div class="container">
             @if(Auth::user()->type_user == "Студент")
-                <form method="post" enctype="multipart/form-data"
+                <form action="{{ route('send-application') }}" {{--method="post" enctype="multipart/form-data"--}}
                     {{--action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}"--}}>
-                    @csrf
+                    {{--@csrf--}}
                     <div class="first-block block">
                         <div>
                             <img class="profile-icon" {{--src="{{ asset($information['logo_src']) }}"--}}
@@ -141,7 +141,7 @@
                                       rows="10" disabled>{{--{{$information['description']}}--}}</textarea>
                         </div>
                     </div>
-                    <button class="btn button" type="submit">Отправить заявку</button>
+                    <button class="btn button" {{--onclick="window.location.href='{{ route("send-application") }}'"--}}>Отправить заявку</button>
                 </form>
             @endif
 
