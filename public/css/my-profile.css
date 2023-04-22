@@ -3,6 +3,7 @@
     height: 144px;
     border-radius: 8px;
     border: solid 2px var(--border);
+    object-fit: contain;
 }
 
 main form .block {
