@@ -12,8 +12,11 @@
         <div class="container">
 
             @if(Auth::user()->type_user == "Студент")
-            <h2 class="create-title">Cписок заявок</h2>
-                @endif
+                <h2 class="create-title">Cписок заявок</h2>
+            @endif
+            @if(Auth::user()->type_user == "Компания")
+                <h2 class="create-title">Cписок вакансий</h2>
+            @endif
         </div>
     </header>
     <div class="container">
