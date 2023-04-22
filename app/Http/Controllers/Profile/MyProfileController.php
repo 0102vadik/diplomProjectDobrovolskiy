@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Profile;
 
+use App\Contracts\IRepositories;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateStudentPostRequest;
 use App\Services\CompanyService\Repositories\CompanyRepositories;
+use App\Services\StudentService\Repositories\StudentLanguagesRepositories;
 use App\Services\StudentService\Repositories\StudentRepositories;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
@@ -12,16 +14,20 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use function Sodium\add;
 
 class MyProfileController extends Controller
 {
     protected StudentRepositories $studentRepositories;
     protected CompanyRepositories $companyRepositories;
 
-    public function __construct(StudentRepositories $studentRepositories, CompanyRepositories $companyRepositories)
+    protected StudentLanguagesRepositories $studentLanguagesRepositories;
+
+    public function __construct(StudentRepositories $studentRepositories, CompanyRepositories $companyRepositories,StudentLanguagesRepositories $studentLanguagesRepositories)
     {
         $this->companyRepositories = $companyRepositories;
         $this->studentRepositories = $studentRepositories;
+        $this->studentLanguagesRepositories = $studentLanguagesRepositories;
     }
 
     public function indexStudents(): Factory|View|Application
@@ -38,13 +44,16 @@ class MyProfileController extends Controller
         ]);
     }
 
-    public function updateProfileStudent(UpdateStudentPostRequest $request){
+    public function updateProfileStudent(Request $request){
         if ( $request->file( 'imgAvatar' ) ) {
             $path      = Storage::putFile( 'public', $request->file( 'imgAvatar' ) );
             $url       = Storage::url( $path );
             $this->studentRepositories->updatePhoto(Auth::id(),$url);
         }
         $this->studentRepositories->updateStudent(Auth::id(),$request->toArray());
+        if($request->programmingLanguages !== null)
+            $this->studentLanguagesRepositories
+                ->updateStudentLanguage($request->programmingLanguages);
         return redirect('/my-profile');
     }
 

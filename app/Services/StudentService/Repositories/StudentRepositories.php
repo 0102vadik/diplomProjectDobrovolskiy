@@ -26,8 +26,7 @@ class StudentRepositories implements IStudentsRepositories
     {
         Student_info::where('id_student',$studentId)->update([
             'name' => $newDetails['studentName'],
-            'description'=> $newDetails['description']
-
+            'description'=> $newDetails['description'],
         ]);
     }
 

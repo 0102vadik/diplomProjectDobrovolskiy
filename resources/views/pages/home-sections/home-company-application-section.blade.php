@@ -203,7 +203,7 @@
                         <div class="application-langs-schedules">
                             <div class="application-langs">
                                 @foreach($object->getArrayLanguages() as $language)
-                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>
+                                    <div class="application-lang">{{$language['language']}}</div>
                                 @endforeach
                             </div>
                             <div class="application-schedules">

@@ -141,9 +141,9 @@
             @endif
 
             @if(Auth::user()->type_user == "Студент")
-                <form method="post" enctype="multipart/form-data"
-                      action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}">
 
+                <form method="post" enctype="multipart/form-data"
+                      action="{{route('updateProfileStudents')}}">
                     @csrf
                     <div class="first-block block">
                         <div>
@@ -154,7 +154,8 @@
                         <div>
                             <label class="custom-label" for="salary">Загрузка изображения</label>
                             <div>
-                                <input type="file" id="imgAvatar" name="imgAvatar" multiple accept="image/jpeg,image/png">
+                                <input type="file" id="imgAvatar" name="imgAvatar" multiple
+                                       accept="image/jpeg,image/png">
                                 <span>Доступные типы файлов: jpeg, png</span>
                             </div>
                         </div>
@@ -162,11 +163,10 @@
 
                     <div class="second-block block">
                         <div>
-
                             <label class="custom-label"
-                                   for="studentName">{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}</label>
+                                   for="studentName">ФИО</label>
                             <input class="custom-input" type="text" name="studentName" id="studentName"
-                                   value="{{$information['name']}}">
+                                   value="{{$information['surname']}} {{$information['name']}} {{$information['patronymic']}}">
                         </div>
                         <div>
                             <label class="custom-label" for="studentPlace">Город проживания</label>
@@ -198,27 +198,27 @@
                             <label class="custom-label" for="salary">Языки программирования</label>
                             <div class="langs">
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="c#" value="c#">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="1">
                                     <label for="c#">C#</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="c++" value="c++">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="2">
                                     <label for="c++">C++</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="javascript" value="javascript">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="3">
                                     <label for="javascript">JavaScript</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="php" value="php">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="4">
                                     <label for="php">PHP</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="java" value="java">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="5">
                                     <label for="java">Java</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="1c" value="1c">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="6">
                                     <label for="1c">1C</label>
                                 </div>
                             </div>
