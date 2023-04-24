@@ -5,6 +5,7 @@ namespace App\Services\CompanyService;
 use App\Contracts\ICompanyRepositories;
 use App\Services\CompanyService\Logical\Company;
 use App\Services\CompanyService\Repositories\CompanyRepositories;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyService
 {
@@ -27,6 +28,10 @@ class CompanyService
     public function getArrayCompany(): array
     {
         return $this->arrayCompany;
+    }
+
+    public function getCompanyById(){
+        return $this->companyRepositories->getCompanyById(Auth::id());
     }
 
     /**

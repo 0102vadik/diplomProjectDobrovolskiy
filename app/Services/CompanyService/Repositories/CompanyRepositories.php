@@ -40,6 +40,6 @@ class CompanyRepositories implements ICompanyRepositories
     }
 
     public function getCompanyById(int $id){
-        return Company_info::find($id)->toArray();
+        return Company_info::find($id);
     }
 }

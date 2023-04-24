@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\Profile\MyProfileController;
 use App\Http\Controllers\StudentApplicationController;
 use App\Http\Controllers\Vacancies\VacanciesCompanyController;
 use App\Http\Controllers\Vacancies\VacanciesStudentController;
+use App\Services\AnnouncementsService\AnnouncementsService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,21 +39,23 @@ Route::get('/home/company',[VacanciesCompanyController::class, 'index'])->middle
 Route::get('/home/student',[VacanciesStudentController::class, 'index'])->middleware('auth');
 
 // ВРЕМЕННЫЕ РОУТЫ
-Route::get('/home/student/more', function (){
-    return view('pages.application-more');
-})->name('more-company');
+Route::get('/home/student/more/{id}', [AnnouncementsController::class,'moreInfo'])
+    ->middleware('auth')
+    ->name('more-company');
 
-Route::get('/home/student/more/send-application', function (){
+Route::get('/home/student/send-application', function (){
     return view('pages.send-application');
 })->name('send-application');
+
+
 
 Route::get('/home/student/more/send-application/success', function (){
     return view('pages.status-of-sending.send-application-success');
 })->name('success');
 
-Route::get('/my-applications', function (){
-    return view('pages.my-application');
-})->name('my-applications');
+Route::get('/my-applications',
+    [AnnouncementsController::class,'pageMyAnnouncements'])
+    ->name('my-applications');
 //-----------------
 
 Route::get('/register/student', function (){
@@ -86,3 +90,6 @@ Route::get('/my-profile/company', [MyProfileController::class,'indexCompany'])->
 
 Route::post('/my-profile/update/company', [MyProfileController::class,'updateProfileCompany'])->middleware('auth')->name('updateProfileCompany');
 Route::post('/my-profile/update/students', [MyProfileController::class,'updateProfileStudent'])->middleware('auth')->name('updateProfileStudents');
+
+Route::post('/create-applications/create', [AnnouncementsController::class,'sandApplication'])->middleware('auth')->name('createApplicationsPost');
+Route::get('/my-applications/delete/{id}', [AnnouncementsController::class,'deleteAnnouncements'])->middleware('auth');

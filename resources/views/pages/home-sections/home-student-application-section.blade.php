@@ -177,45 +177,32 @@
     <!-- Список вакансий / стундентов -->
     <!-- For student -->
     <section class="application-container">
-        <h2 class="application-title">Кол-во вакансий: {{count($arrayObject)}}</h2>
+        <h2 class="application-title">Кол-во вакансий: {{count($arrayAnnouncements)}}</h2>
         <div class="application-list">
-            @foreach($arrayObject as $object)
+            @foreach($arrayAnnouncements as $object)
                 <article class="application-card">
                     <div class="company-icon">
-                        <img src="{{ asset($object->getLogoSrc())}}" alt="company-icon">
+                        <img src="{{ asset($object->logo_src)}}" alt="company-icon">
                     </div>
                     <div class="company-info">
                         <div class="company-name-place">
                             <div class="company-name">
-                                {{$object->getNameCompany()}}
+                                {{$object->company_name}}
                             </div>
                             <div class="company-place">
                                 <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
                                      width="15px">
-                                {{$object->getCity()}}
+                                {{$object->city}}
                             </div>
                         </div>
                         <div class="application-name">
-                            Front-end разработчик
-                        </div>
-                        <div class="application-price">
-                            от 2000 руб.
-                        </div>
-                        <div class="application-langs-schedules">
-                            <div class="application-langs">
-                                {{--                                @foreach($object->getArrayLanguages() as $language)--}}
-                                {{--                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>--}}
-                                {{--                                @endforeach--}}
-                            </div>
-                            <div class="application-schedules">
-                                <div class="application-schedule">Полный день</div>
-                            </div>
+                            {{$object->header}}
                         </div>
                         <div class="application-description">
-                            {{$object->getDescription()}}
+                            {{$object->description}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn" onclick="window.location.href='{{ route("more-company") }}'">
+                            <button class="button btn" onclick="window.location.href='/home/student/more/{{$object->id_course}}'">
                                 Подробнее
                             </button>
                         </div>

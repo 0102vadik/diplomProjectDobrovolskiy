@@ -11,7 +11,8 @@
     <header>
         <div class="container">
             @if(Auth::user()->type_user == "Студент")
-                <h2 class="create-title">Подробнее о вакансии *НАЗВАНИЕ ВАКАНСИИ*</h2>
+                <h2 class="create-title">Подробнее о вакансии</h2>
+                <h2 class="create-title">"{{$information->header}}"</h2>
             @endif
                 @if(Auth::user()->type_user == "Компания")
                     <h2 class="create-title">Подробнее о студенте</h2>
@@ -26,7 +27,7 @@
                     {{--@csrf--}}
                     <div class="first-block block">
                         <div>
-                            <img class="profile-icon" {{--src="{{ asset($information['logo_src']) }}"--}}
+                            <img class="profile-icon" src="{{ asset($information->logo_src) }}"
                             alt="company-icon">
                         </div>
                         {{--<div class="custom-image-upload-wrapper">
@@ -43,41 +44,13 @@
                         <div>
                             <label class="custom-label" for="companyName">Название компании</label>
                             <input class="custom-input" type="text" name="companyName" id="companyName"
-                                   {{--value="{{$information['company_name']}}"--}} disabled>
+                                   value="{{$information->company_name}}" disabled>
                         </div>
                         <div>
                             <label class="custom-label" for="companyPlace">Местонахождение</label>
                             <input class="custom-input" type="text" name="companyPlace" id="companyPlace"
-                                   {{-- value="{{$information['city']}}"--}} disabled>
+                                   value="{{$information->city}}" disabled>
                         </div>
-                        {{--<div>
-                            <label class="custom-label" for="salary">Доход</label>
-                            <div class="custom-select">
-                                <select name="" id="salary">
-                                    <option selected value="0" hidden></option>
-                                    <option value="fullDay"></option>
-                                    <option value="shiftWork">Сменный график</option>
-                                    <option value="flexibleSchedule">Гибкий график</option>
-                                    <option value="distantWork">Удалённая работа</option>
-                                </select>
-                                <div class="select_arrow">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="custom-select-container">
-                            <label class="custom-label" for="schedule">График работы</label>
-                            <div class="custom-select">
-                                <select name="" id="schedule">
-                                    <option selected value="0" hidden></option>
-                                    <option value="fullDay">Полный день</option>
-                                    <option value="shiftWork">Сменный график</option>
-                                    <option value="flexibleSchedule">Гибкий график</option>
-                                    <option value="distantWork">Удалённая работа</option>
-                                </select>
-                                <div class="select_arrow">
-                                </div>
-                            </div>
-                        </div>--}}
                     </div>
                     <div class="third-block block">
                         <div class="custom-select-container">
@@ -100,48 +73,17 @@
                         <div>
                             <label class="custom-label" for="phone">Контактный телефон</label>
                             <input class="custom-input" type="tel" name="companyPhone" id="companyPhone"
-                                   value="{{--{{$information['phone_contact']}}--}}" disabled>
-                        </div>
-                    </div>
-                    <div class="forth-block block">
-                        <div>
-                            <label class="custom-label" for="salary">Языки программирования</label>
-                            <div class="langs">
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="c#" value="c#">
-                                    <label for="c#">C#</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="c++" value="c++">
-                                    <label for="c++">C++</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="javascript" value="javascript">
-                                    <label for="javascript">JavaScript</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="php" value="php">
-                                    <label for="php">PHP</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="java" value="java">
-                                    <label for="java">Java</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" type="checkbox" id="1c" value="1c">
-                                    <label for="1c">1C</label>
-                                </div>
-                            </div>
+                                   value="{{$information->phone_contact}}" disabled>
                         </div>
                     </div>
                     <div class="block">
                         <div>
                             <label class="custom-label" for="description">Описание</label>
                             <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                      rows="10" disabled>{{--{{$information['description']}}--}}</textarea>
+                                      rows="10" disabled>{{$information->description}} </textarea>
                         </div>
                     </div>
-                    <button class="btn button" {{--onclick="window.location.href='{{ route("send-application") }}'"--}}>Отправить заявку</button>
+                    <button class="btn button" onclick="window.location.href='/home/student/send-application'">Отправить заявку</button>
                 </form>
             @endif
 

@@ -15,7 +15,7 @@
     <main>
         <div class="container">
             <!-- РАСКОММЕНТИРОВАТЬ МЕТОД ПОСТ И УБРАТЬ ACTION (Должно перенаправлять на страницу send-application-success.blade.php) -->
-            <form {{--method="post"--}} action="{{ route('success') }}">
+            <form {{--method="post"--}} action="/home/student/send-application">
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>
@@ -25,7 +25,7 @@
                 <div class="fifth-block block">
                     <div>
                         <label class="custom-label" for="description">Сообщение</label>
-                        <textarea class="custom-textarea" name="description" id="description" cols="30"
+                        <textarea class="custom-textarea" name="message" id="description" cols="30"
                                   rows="10"></textarea>
                     </div>
                 </div>

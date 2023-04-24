@@ -16,6 +16,6 @@ class StudentApplicationController extends Controller
 
     public function sandApplication(Request $request){
         $this->applicationService->sandApplication($request->message,$request->idCompany,$request->header);
-        return view('home');
+        return redirect()->to(route('success'));
     }
 }
