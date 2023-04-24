@@ -28,4 +28,6 @@
             @endif
         </div>
     </main>
+
+    <script src="{{ asset('js/filter-more-less.js') }}"></script>
 @endsection

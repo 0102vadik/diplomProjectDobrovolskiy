@@ -236,4 +236,101 @@ main .application-content .application-filters .filter-choose label {
     color: var(--textColorSecond);
 }
 
+.show-more{
+    display: none;
+    margin-top: .5rem;
+    position: relative;
+    /*display: flex;*/
+    cursor: pointer;
+}
+.show-more .show-more-text{
+    color: var(--primary);
+    transition: .7s;
+}
+
+.filter-more{
+    display: block;
+}
+
+.filter-more.active{
+    display: block;
+}
+
+.show-more.active .select-arrow{
+    transform: rotate(180deg);
+}
+
+.select-arrow{
+    position: absolute;
+    top: 8px;
+    left: 125px;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0px 5px;
+    border-color: var(--primary) transparent transparent transparent;
+    transition: .7s;
+}
+
+.show-more:hover .show-more-text,
+.show-more:focus .show-more-text{
+    color: var(--secondary);
+}
+
+.show-more:hover .select-arrow,
+.show-more:focus .select-arrow {
+    border-top-color: var(--secondary);
+}
+
+.show-more:disabled .select-arrow {
+    border-top-color: #cccccc;
+}
+
+@media (max-width: 992px) {
+    .header-container .header-title{
+        font-size: 2.5rem;
+    }
+    .header-container .header-subtitle{
+        font-size: 1rem;
+    }
+    main .application-content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    main .application-content .application-filters{
+        width: 100%;
+    }
+    .application-container .application-title{
+        margin-top: 2rem;
+    }
+    .application-container .application-list .application-card{
+        padding: 1rem;
+    }
+    .filter-more{
+        display: none;
+    }
+    .show-more{
+        display: block;
+    }
+}
+
+@media (max-width: 768px){
+    .header-container .header-title{
+        line-height: 110%;
+    }
+}
+
+@media (max-width: 440px){
+    .header-container .header-title-container{
+        text-align: center;
+    }
+    .header-container .header-title{
+        font-size: 2rem;
+    }
+    .application-card .company-info .company-name{
+        font-size: 0.75rem;
+    }
+    .company-place{
+        display: none;
+    }
+}
+
 

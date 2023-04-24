@@ -24,6 +24,7 @@
                     </div>
                 </div>
             </article>
+            <div class="filter-more">
             <article class="filter-type salary">
                 <h3 class="filter-title">Уровень дохода</h3>
                 <div class="filter-choose">
@@ -165,18 +166,18 @@
                     </div>
                 </div>
             </article>
+            </div>
+            <div class="show-more">
+                <span class="show-more-text">Показать больше</span>
+                <div class="select-arrow"></div>
+            </div>
             <button class="btn button">Применить</button>
         </aside>
     </div>
     <!-- Список вакансий / стундентов -->
     <!-- For student -->
     <section class="application-container">
-        @if(Auth::user()->type_user == "Студент")
-            <h2 class="application-title">{{count($arrayObject)}} вакансий</h2>
-        @endif
-        @if(Auth::user()->type_user == "Компания")
-            <h2 class="application-title">{{count($arrayObject)}} студентов</h2>
-        @endif
+        <h2 class="application-title">Кол-во вакансий: {{count($arrayObject)}}</h2>
         <div class="application-list">
             @foreach($arrayObject as $object)
                 <article class="application-card">
@@ -202,9 +203,9 @@
                         </div>
                         <div class="application-langs-schedules">
                             <div class="application-langs">
-{{--                                @foreach($object->getArrayLanguages() as $language)--}}
-{{--                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>--}}
-{{--                                @endforeach--}}
+                                {{--                                @foreach($object->getArrayLanguages() as $language)--}}
+                                {{--                                    <div class="application-lang">{{$language['level']}} {{$language['language']}}</div>--}}
+                                {{--                                @endforeach--}}
                             </div>
                             <div class="application-schedules">
                                 <div class="application-schedule">Полный день</div>
@@ -214,7 +215,9 @@
                             {{$object->getDescription()}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn" onclick="window.location.href='{{ route("more-company") }}'">Подробнее</button>
+                            <button class="button btn" onclick="window.location.href='{{ route("more-company") }}'">
+                                Подробнее
+                            </button>
                         </div>
                     </div>
                 </article>
