@@ -3,7 +3,7 @@
     <div>
         <aside class="application-filters">
             <h2 class="application-filters-title">Фильтры</h2>
-            <article class="filter-type filter-by">
+            {{--<article class="filter-type filter-by">
                 <h3 class="filter-title">Отфильтровать по</h3>
                 <div class="filter-choose">
                     <div>
@@ -23,9 +23,26 @@
                         <label for="salary-cheaper">По возрастанию зарплаты</label>
                     </div>
                 </div>
+            </article>--}}
+            <article class="filter-type filter-work-type">
+                <h3 class="filter-title">Тип</h3>
+                <div class="filter-choose">
+                    <div>
+                        <input id="internship" type="checkbox" name="type[]">
+                        <label for="internship">Стажировка</label>
+                    </div>
+                    <div>
+                        <input id="practice" type="checkbox" name="type[]">
+                        <label for="practice">Практика</label>
+                    </div>
+                    <div>
+                        <input id="work" type="checkbox" name="type[]">
+                        <label for="work">Работа</label>
+                    </div>
+                </div>
             </article>
             <div class="filter-more">
-                <article class="filter-type salary">
+                {{--<article class="filter-type salary">
                     <h3 class="filter-title">Уровень дохода</h3>
                     <div class="filter-choose">
                         <div>
@@ -53,7 +70,7 @@
                             <label for="from2500">От 2500 руб.</label>
                         </div>
                     </div>
-                </article>
+                </article>--}}
                 <article class="filter-type place">
                     <h3 class="filter-title">Местонахождение</h3>
                     <div class="filter-choose">
@@ -83,7 +100,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="filter-type specialization">
+                {{--<article class="filter-type specialization">
                     <h3 class="filter-title">Специализация</h3>
                     <div class="filter-choose">
                         <div>
@@ -115,7 +132,7 @@
                             <label for="projectManager">Менеджер проекта</label>
                         </div>
                     </div>
-                </article>
+                </article>--}}
                 <article class="filter-type lang">
                     <h3 class="filter-title">Языки программирования</h3>
                     <div class="filter-choose">

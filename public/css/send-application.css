@@ -1,0 +1,42 @@
+.profile-icon {
+    width: 144px;
+    height: 144px;
+    border-radius: 8px;
+    border: solid 2px var(--border);
+    object-fit: contain;
+}
+
+main .block {
+    margin-top: 1.25rem;
+}
+
+main .name-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+}
+
+main .second-block,
+main .sixth-block,
+main .fifth-block{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    main .second-block,
+    main .sixth-block,
+    main .fifth-block,
+    main .name-block{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .second-block div:nth-child(1),
+    .sixth-block div:nth-child(1),
+    .fifth-block div:nth-child(1),
+    .name-block div:nth-child(1),
+    .name-block div:nth-child(2){
+        margin-bottom: 1.25rem;
+    }
+}

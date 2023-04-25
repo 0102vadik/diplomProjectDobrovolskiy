@@ -29,6 +29,37 @@
                                   rows="10" required></textarea>
                     </div>
                 </div>
+                <div class="forth-block block">
+                    <div>
+                        <label class="custom-label" for="salary">Языки программирования</label>
+                        <div class="langs">
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="c#" value="c#">
+                                <label for="c#">C#</label>
+                            </div>
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="c++" value="c++">
+                                <label for="c++">C++</label>
+                            </div>
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="javascript" value="javascript">
+                                <label for="javascript">JavaScript</label>
+                            </div>
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="php" value="php">
+                                <label for="php">PHP</label>
+                            </div>
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="java" value="java">
+                                <label for="java">Java</label>
+                            </div>
+                            <div class="lang">
+                                <input class="custom-checkbox" type="checkbox" id="1c" value="1c">
+                                <label for="1c">1C</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="third-block block">
                     <div class="custom-select-container">
                         <label class="custom-label" for="type">Тип</label>

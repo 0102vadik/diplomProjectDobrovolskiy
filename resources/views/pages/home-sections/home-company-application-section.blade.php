@@ -4,7 +4,7 @@
         <aside class="application-filters">
             <form method="post">
                 <h2 class="application-filters-title">Фильтры</h2>
-                <article class="filter-type filter-by">
+                {{--<article class="filter-type filter-by">
                     <h3 class="filter-title">Отфильтровать по</h3>
                     <div class="filter-choose">
                         <div>
@@ -22,6 +22,39 @@
                         <div>
                             <input id="salary-cheaper" type="radio" name="filterBy">
                             <label for="salary-cheaper">По возрастанию зарплаты</label>
+                        </div>
+                    </div>
+                </article>--}}
+                <article class="filter-type specialization">
+                    <h3 class="filter-title">Специализация</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="frontend" type="radio" name="specialization">
+                            <label for="frontend">Front-end разработчик</label>
+                        </div>
+                        <div>
+                            <input id="backend" type="radio" name="specialization">
+                            <label for="backend">Back-end разработчик</label>
+                        </div>
+                        <div>
+                            <input id="fullstack" type="radio" name="specialization">
+                            <label for="fullstack">Fullstack разработчик</label>
+                        </div>
+                        <div>
+                            <input id="game" type="radio" name="specialization">
+                            <label for="game">Разработчик игр</label>
+                        </div>
+                        <div>
+                            <input id="mobile" type="radio" name="specialization">
+                            <label for="mobile">Разработчик моб. приложений</label>
+                        </div>
+                        <div>
+                            <input id="tester" type="radio" name="specialization">
+                            <label for="tester">Тестировщик</label>
+                        </div>
+                        <div>
+                            <input id="projectManager" type="radio" name="specialization">
+                            <label for="projectManager">Менеджер проекта</label>
                         </div>
                     </div>
                 </article>
@@ -81,39 +114,6 @@
                             <div>
                                 <input id="gomel" type="checkbox" name="place">
                                 <label for="gomel">Гомель</label>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="filter-type specialization">
-                        <h3 class="filter-title">Специализация</h3>
-                        <div class="filter-choose">
-                            <div>
-                                <input id="frontend" type="radio" name="specialization">
-                                <label for="frontend">Front-end разработчик</label>
-                            </div>
-                            <div>
-                                <input id="backend" type="radio" name="specialization">
-                                <label for="backend">Back-end разработчик</label>
-                            </div>
-                            <div>
-                                <input id="fullstack" type="radio" name="specialization">
-                                <label for="fullstack">Fullstack разработчик</label>
-                            </div>
-                            <div>
-                                <input id="game" type="radio" name="specialization">
-                                <label for="game">Разработчик игр</label>
-                            </div>
-                            <div>
-                                <input id="mobile" type="radio" name="specialization">
-                                <label for="mobile">Разработчик моб. приложений</label>
-                            </div>
-                            <div>
-                                <input id="tester" type="radio" name="specialization">
-                                <label for="tester">Тестировщик</label>
-                            </div>
-                            <div>
-                                <input id="projectManager" type="radio" name="specialization">
-                                <label for="projectManager">Менеджер проекта</label>
                             </div>
                         </div>
                     </article>

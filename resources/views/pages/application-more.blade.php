@@ -3,7 +3,7 @@
 
 @section('head_links')
     <link rel="stylesheet" href="{{ asset('css/create-form-style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/my-profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/send-application.css') }}">
     <link rel="stylesheet" href="{{ asset('css/assets.css') }}">
 @endsection
 
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="third-block block">
-                        <div class="custom-select-container">
+                        {{--<div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
                                 <select name="" id="specialization">
@@ -69,7 +69,7 @@
                                 <div class="select_arrow">
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                         <div>
                             <label class="custom-label" for="phone">Контактный телефон</label>
                             <input class="custom-input" type="tel" name="companyPhone" id="companyPhone"

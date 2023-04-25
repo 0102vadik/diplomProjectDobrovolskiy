@@ -33,17 +33,24 @@
                             </label>
                         </div>
                     </div>
+                    <div class="block">
 
-                    <div class="second-block block">
                         <div>
                             <label class="custom-label" for="companyName">Название компании</label>
                             <input class="custom-input" type="text" name="companyName" id="companyName"
                                    value="{{$information['company_name']}}" required>
                         </div>
+                    </div>
+                    <div class="second-block block">
                         <div>
                             <label class="custom-label" for="companyPlace">Местонахождение</label>
                             <input class="custom-input" type="text" name="companyPlace" id="companyPlace"
                                    value="{{$information['city']}}">
+                        </div>
+                        <div>
+                            <label class="custom-label" for="phone">Контактный телефон</label>
+                            <input class="custom-input" type="tel" name="companyPhone" id="companyPhone"
+                                   value="{{$information['phone_contact']}}" required>
                         </div>
                         {{--<div>
                             <label class="custom-label" for="salary">Доход</label>
@@ -74,7 +81,7 @@
                             </div>
                         </div>--}}
                     </div>
-                    <div class="third-block block">
+                    {{--<div class="third-block block">
                         <div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
@@ -92,13 +99,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <label class="custom-label" for="phone">Контактный телефон</label>
-                            <input class="custom-input" type="tel" name="companyPhone" id="companyPhone"
-                                   value="{{$information['phone_contact']}}" required>
-                        </div>
-                    </div>
-                    <div class="forth-block block">
+                    </div>--}}
+                    {{--<div class="forth-block block">
                         <div>
                             <label class="custom-label" for="salary">Языки программирования</label>
                             <div class="langs">
@@ -128,7 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     <div class="block">
                         <div>
                             <label class="custom-label" for="description">Описание</label>
@@ -155,7 +157,8 @@
                             <label class="custom-label" for="salary">Загрузка изображения</label>
                             <label class="custom-image-upload">
                                 <span class="custom-image-upload-text" type="text"></span>
-                                <input type="file" id="imgAvatar" name="imgAvatar" multiple accept="image/jpeg,image/png">
+                                <input type="file" id="imgAvatar" name="imgAvatar" multiple
+                                       accept="image/jpeg,image/png">
                                 <span class="{{--custom-image-upload-btn--}} btn button">Выберите файл</span>
                             </label>
                         </div>
@@ -192,14 +195,16 @@
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
                                 <select name="specialization" id="specialization">
-                                    <option selected value="{{$information['specialization'] ?? ""}}" name="specialization" hidden>{{$information['specialization'] ?? ""}}</option>
-                                    <option  value="Front-end разработчик">Front-end разработчик</option>
-                                    <option  value="Back-end разработчик">Back-end разработчик</option>
-                                    <option  value="Fullstack разработчик">Fullstack разработчик</option>
-                                    <option  value="Разработчик игр">Разработчик игр</option>
-                                    <option  value="Разработчик моб. приложений">Разработчик моб. приложений</option>
-                                    <option  value="Тестировщик">Тестировщик</option>
-                                    <option  value="Менеджер проекта">Менеджер проекта</option>
+                                    <option selected value="{{$information['specialization'] ?? ""}}"
+                                            name="specialization"
+                                            hidden>{{$information['specialization'] ?? ""}}</option>
+                                    <option value="Front-end разработчик">Front-end разработчик</option>
+                                    <option value="Back-end разработчик">Back-end разработчик</option>
+                                    <option value="Fullstack разработчик">Fullstack разработчик</option>
+                                    <option value="Разработчик игр">Разработчик игр</option>
+                                    <option value="Разработчик моб. приложений">Разработчик моб. приложений</option>
+                                    <option value="Тестировщик">Тестировщик</option>
+                                    <option value="Менеджер проекта">Менеджер проекта</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -214,27 +219,33 @@
                             <label class="custom-label" for="salary">Языки программирования</label>
                             <div class="langs">
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="1">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="1">
                                     <label for="c#">C#</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="2">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="2">
                                     <label for="c++">C++</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="3">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="3">
                                     <label for="javascript">JavaScript</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="4">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="4">
                                     <label for="php">PHP</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="5">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="5">
                                     <label for="java">Java</label>
                                 </div>
                                 <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox" value="6">
+                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                           value="6">
                                     <label for="1c">1C</label>
                                 </div>
                             </div>
@@ -245,7 +256,8 @@
                             <label class="custom-label" for="salary">Предпочитаемый доход</label>
                             <div class="custom-select">
                                 <select name="preferredIncome" id="salary">
-                                    <option selected value="{{$information['preferred_income'] ??"Доход не указан"}}">{{$information['preferred_income'] ??"Доход не указан"}}</option>
+                                    <option selected
+                                            value="{{$information['preferred_income'] ??"Доход не указан"}}">{{$information['preferred_income'] ??"Доход не указан"}}</option>
                                     <option value="От 500 руб.">От 500 руб.</option>
                                     <option value="От 1000 руб.">От 1000 руб.</option>
                                     <option value="От 1500 руб.">От 1500 руб.</option>
@@ -260,7 +272,8 @@
                             <label class="custom-label" for="schedule">Предпочитаемый график работы</label>
                             <div class="custom-select">
                                 <select name="preferredSchedule" id="schedule">
-                                    <option selected value="{{$information['preferred_schedule'] ??""}}" hidden>{{$information['preferred_schedule'] ??""}}</option>
+                                    <option selected value="{{$information['preferred_schedule'] ??""}}"
+                                            hidden>{{$information['preferred_schedule'] ??""}}</option>
                                     <option value="Полный день">Полный день</option>
                                     <option value="Сменный график">Сменный график</option>
                                     <option value="Гибкий график">Гибкий график</option>
