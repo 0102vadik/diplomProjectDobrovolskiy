@@ -83,7 +83,7 @@
                                       rows="10" disabled>{{$information->description}} </textarea>
                         </div>
                     </div>
-                    <button class="btn button" onclick="window.location.href='/home/student/send-application/{{$information->id_company}}'">Отправить заявку</button>
+                    <button class="btn button" onclick="window.location.href='/home/student/send-application/{{$information->id_company}}/{{$information->id_course}}'">Отправить заявку</button>
                 </div>
             @endif
 

@@ -17,7 +17,8 @@
             <!-- РАСКОММЕНТИРОВАТЬ МЕТОД ПОСТ И УБРАТЬ ACTION (Должно перенаправлять на страницу send-application-success.blade.php) -->
             <form method="post" action="{{route('newApplication')}}">
                 @csrf
-                <input type="text" name="id" id="id" hidden>
+                <input type="text" name="idCourse" id="id" value="{{$idCourse}}" hidden>
+                <input type="text" name="idCompany" id="id" value="{{$idCompany}}" hidden>
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>

@@ -16,10 +16,10 @@ class StudentApplicationService
         $this->studentApplicationRepositories = new StudentApplicationsRepositories();
     }
 
-    public function sandApplication(string $message, int $idCompany, string $header)
+    public function sandApplication(string $message, int $idCompany, string $header,int $idCourse)
     {
         $this->studentApplicationRepositories
-            ->create(array_merge(compact("message","idCompany","header"),array("idStudent"=>Auth::id())));
+            ->create(array_merge(compact("message","idCompany","header","idCourse"),array("idStudent"=>Auth::id())));
     }
 
 }

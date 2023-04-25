@@ -27,6 +27,7 @@ class StudentApplicationsRepositories implements IRepositories
             "id_company" => $info['idCompany'],
             "id_student" => $info['idStudent'],
             "header" => $info['header'],
+            "id_course" => $info['idCourse'],
             "status" => "Ожидание ответа"
         ]);
     }
