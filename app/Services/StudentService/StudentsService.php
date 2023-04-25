@@ -23,7 +23,7 @@ class StudentsService
             foreach ($studentInfo as $language) {
                 array_push($arrayStudentsLanguage, $language->getLanguage);
             }
-            if (!in_array(null, $student) || empty($arrayStudentsLanguage)) {
+            if (!in_array(null, $student) && !empty($arrayStudentsLanguage)) {
                 array_push($this->arrayStudents, new Student($student, $arrayStudentsLanguage));
             }
         }
@@ -39,14 +39,30 @@ class StudentsService
         return $this->studentsRepositories->getStudentsById($idStudents);
     }
 
-    public function getStudentsSort(array $type,array $city,array $language,array $shedule)
+    public function getStudentsSort($city,$specialization,$income,$shedule)
     {
         $sortedStudents = [];
+        if ($city == null){
+            $city = ['Могилёв', 'Минск', 'Гродно', 'Гомель', 'Брест'];
+        }
+        if ($specialization == null){
+            $specialization = ['Front-end разработчик', 'Back-end разработчик', 'Fullstack разработчик', 'Разработчик игр', 'Разработчик моб. приложений','Тестировщик','Менеджер проекта'];
+        }
+        if ($income == null){
+            $income = ['Доход не указан', 'От 500 руб.', 'От 1000 руб.', 'От 1500 руб.', 'От 2000 руб.','От 2500 руб.'];
+        }
+        if ($shedule == null){
+            $shedule = ['Полный день', 'Сменный график', 'Гибкий график', 'Удалённая работа'];
+        }
         foreach ($this->arrayStudents as $student) {
-            if(in_array($student->getDataQuestionnaire()->getCity(), $city)){
+            if(in_array($student->getDataQuestionnaire()->getCity(), $city)
+                && in_array($student->getDataQuestionnaire()->getSpecialization(),$specialization)
+                && in_array($student->getDataQuestionnaire()->getPreferredIncome(),$income)
+                && in_array($student->getDataQuestionnaire()->getPreferredSchedule(),$shedule)){
                 array_push($sortedStudents,$student);
             }
         }
+        return $sortedStudents;
     }
 
 }

@@ -86,7 +86,7 @@ Route::get('/create-application', function (){
 
 Route::get('/my-profile/company', function (){
     return view('pages.my-profile');
-})->middleware('auth')->name('my-profile')->middleware('auth');
+})->middleware('auth')->middleware('auth')->name('my-profile');
 
 Route::get('/my-profile', function(){
     if(Auth::user()->type_user == "Компания") {
@@ -110,3 +110,5 @@ Route::get('/my-applications/delete/{id}', [AnnouncementsController::class,'dele
 
 
 Route::post('/sort/announcement',[SortController::class,'sortAnnouncements'])->middleware('auth')->name('sortAnnouncement');
+Route::post('/sort/students',[SortController::class,'sortStudents'])->middleware('auth')->name('sortStudents');
+

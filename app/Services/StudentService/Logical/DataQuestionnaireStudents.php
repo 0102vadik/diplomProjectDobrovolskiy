@@ -15,6 +15,9 @@ class DataQuestionnaireStudents implements IQuestionnaire
     protected string $description;
     protected string $photo_src;
     protected string $city;
+    protected string $specialization;
+    protected string $preferred_schedule;
+    protected string $preferred_income;
 
     public function __construct(array $dataQuestionnaire)
     {
@@ -27,6 +30,58 @@ class DataQuestionnaireStudents implements IQuestionnaire
         $this->description = $dataQuestionnaire['description'] ?? "";
         $this->photo_src = $dataQuestionnaire['photo_src'] ?? "";
         $this->id = $dataQuestionnaire['id_student'];
+        $this->specialization = $dataQuestionnaire['specialization'];
+        $this->preferred_schedule = $dataQuestionnaire['preferred_schedule'];
+        $this->preferred_income = $dataQuestionnaire['preferred_income'];
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getSpecialization(): string
+    {
+        return $this->specialization;
+    }
+
+    /**
+     * @param string $specialization
+     */
+    public function setSpecialization(string $specialization): void
+    {
+        $this->specialization = $specialization;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPreferredSchedule(): string
+    {
+        return $this->preferred_schedule;
+    }
+
+    /**
+     * @param string $preferred_schedule
+     */
+    public function setPreferredSchedule(string $preferred_schedule): void
+    {
+        $this->preferred_schedule = $preferred_schedule;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPreferredIncome(): string
+    {
+        return $this->preferred_income;
+    }
+
+    /**
+     * @param string $preferred_income
+     */
+    public function setPreferredIncome(string $preferred_income): void
+    {
+        $this->preferred_income = $preferred_income;
     }
 
     public function getId(){

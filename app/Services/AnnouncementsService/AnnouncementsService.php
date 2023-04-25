@@ -47,7 +47,7 @@ class AnnouncementsService
             $type = ['Cтажировка', 'Практика', 'Работа'];
         }
         if ($city == null) {
-            $city = $this->repositories->getAllCity()->toArray();
+            $city = ['Могилёв', 'Минск', 'Гродно', 'Гомель', 'Брест'];
         }
         return $this->repositories->getSort($type, $city);
     }
