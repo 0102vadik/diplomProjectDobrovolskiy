@@ -55,12 +55,12 @@ Route::post('/home/student/send-application/serve', [StudentApplicationControlle
     ->middleware('auth')
     ->name('newApplication');
 
-Route::get('/my-applications/students', function () {
-    return view('pages.student-applications');
-})
+Route::get('/my-applications/students/{idCourse}', [StudentApplicationController::class,'getStudentsByIdCourse'])
     ->middleware('auth')
     ->name('studentApplications');
 
+Route::get('/my-applications/students/success/{idApplication}/{idCourse}',[StudentApplicationController::class,'successApplication']);
+Route::get('/my-applications/students/reject/{idApplication}/{idCourse}',[StudentApplicationController::class,'rejectApplication']);
 
 
 Route::get('/home/student/more/send-application/success', function (){

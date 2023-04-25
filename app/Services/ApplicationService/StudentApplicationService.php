@@ -22,4 +22,16 @@ class StudentApplicationService
             ->create(array_merge(compact("message","idCompany","header","idCourse"),array("idStudent"=>Auth::id())));
     }
 
+    public function getApplicationByIdCourse(int $idCourse){
+        return $this->studentApplicationRepositories->getByIdCourse($idCourse);
+    }
+
+    public function successApplication(int $idApplication){
+        $this->studentApplicationRepositories->statusSuccess($idApplication);
+    }
+
+    public function rejectApplication(int $idApplication){
+        $this->studentApplicationRepositories->statusReject($idApplication);
+    }
+
 }

@@ -36,4 +36,23 @@ class StudentApplicationsRepositories implements IRepositories
     {
         Student_application::where('id_application', $id)->updated($newDetails);
     }
+
+    public function getByIdCourse(int $idCourse){
+        return Student_application::join('student_infos','student_applications.id_student','=','student_infos.id_student')
+            ->select('student_applications.*','student_infos.name','student_infos.photo_src','student_infos.surname','student_infos.patronymic')
+            ->where('id_course',$idCourse)
+            ->get();
+    }
+
+    public function statusSuccess(int $idApplication){
+        Student_application::where('id_application',$idApplication)->update([
+            'status' => 'Заявка принята'
+        ]);
+    }
+
+    public function statusReject(int $idApplication){
+        Student_application::where('id_application',$idApplication)->update([
+            'status' => 'Заявка отклонена'
+        ]);
+    }
 }

@@ -19,50 +19,49 @@
     @if(Auth::user()->type_user == "Компания")
         <div class="container">
             <div class="application-content">
-                {{--@foreach($informationAnnouncements as $announcements)--}}
+                @foreach($applications as $application)
 
                     <section class="application-container">
                         <div class="application-list">
                             <article class="application-card">
                                 <div class="company-icon">
-                                    <img src="{{--{{ asset($object->logo_src)}}--}}" alt="company-icon">
+                                    <img src="{{ asset($application->photo_src)}}" alt="company-icon">
                                 </div>
                                 <div class="company-info">
                                     <div class="company-name-place">
                                         <div class="company-name">
-                                            {{--{{$object->company_name}}--}}
-                                            ФИО
+                                            {{$application->name}}
                                         </div>
                                     </div>
                                     <div class="application-name">
-                                        {{--{{$announcements->header}}--}}
-                                        Заголовок
+                                        {{$application->header}}
                                     </div>
                                     <div class="application-description">
-                                        {{--{{$announcements->description}}--}}
-                                        Сообщение
+                                        {{$application->message}}
                                     </div>
-                                    <div class="application-buttons">
-                                        <div class="application-btn">
-                                            <button
-                                                class="button btn success"
-                                                onclick="window.location.href='{{--{{ route('') }}--}}'">
-                                                Принять
-                                            </button>
+                                    @if($application->status == "Ожидание ответа")
+                                        <div class="application-buttons">
+                                            <div class="application-btn">
+                                                <button
+                                                    class="button btn success"
+                                                    onclick="window.location.href='/my-applications/students/success/{{$application->id_application}}/{{$idCourse}}'">
+                                                    Принять
+                                                </button>
+                                            </div>
+                                            <div class="application-btn">
+                                                <button
+                                                    class="button btn danger"
+                                                    onclick="window.location.href='/my-applications/students/success/{{$application->id_application}}/{{$idCourse}}'">
+                                                    Отклонить
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="application-btn">
-                                            <button
-                                                class="button btn danger"
-                                                onclick="window.location.href=''">
-                                                Отклонить
-                                            </button>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                             </article>
                         </div>
                     </section>
-                {{--@endforeach--}}
+                @endforeach
             </div>
         </div>
     @endif
