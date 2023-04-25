@@ -54,8 +54,8 @@
                                     <div class="application-buttons">
                                         <div class="application-btn">
                                             <button
-                                                class="button btn primary"
-                                                onclick="window.location.href='{{--{{ route('') }}--}}'">
+                                                class="button btn"
+                                                onclick="window.location.href='{{ route('studentApplications') }}'">
                                                 Заявки студентов
                                             </button>
                                         </div>
