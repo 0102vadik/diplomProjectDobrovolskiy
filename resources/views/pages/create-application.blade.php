@@ -19,22 +19,22 @@
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>
-                        <input class="custom-input" type="text" name="header" id="header">
+                        <input class="custom-input" type="text" name="header" id="header" required>
                     </div>
                 </div>
                 <div class="fifth-block block">
                     <div>
                         <label class="custom-label" for="description">Описание</label>
                         <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                  rows="10"></textarea>
+                                  rows="10" required></textarea>
                     </div>
                 </div>
                 <div class="third-block block">
                     <div class="custom-select-container">
                         <label class="custom-label" for="type">Тип</label>
                         <div class="custom-select">
-                            <select name="type" id="type">
-                                <option selected value="0" hidden></option>
+                            <select name="type" id="type" required="required">
+                                <option selected value="" hidden></option>
                                 <option value="Стажировка">Стажировка</option>
                                 <option value="Практика">Практика</option>
                                 <option value="Работа">Работа</option>
@@ -46,7 +46,7 @@
                     <div>
                         <label class="custom-label" for="expirationDate">До какого действительна</label>
                         <input class="custom-input" type="date" name="expirationDate" id="expirationDate"
-                               min="{{ date("Y-m-d") }}">
+                               min="{{ date("Y-m-d") }}" required>
                     </div>
                 </div>
                 <button class="btn button" type="submit">Создать вакансию</button>
