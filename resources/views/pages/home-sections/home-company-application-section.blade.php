@@ -176,8 +176,9 @@
             </form>
         </aside>
     </div>
+
     <!-- Список вакансий / стундентов -->
-    <!-- For student -->
+
     <section class="application-container">
         <h2 class="application-title">Кол-во студентов: {{count($arrayObject)}}</h2>
         <div class="application-list">
@@ -191,11 +192,13 @@
                             <div class="company-name">
                                 {{$object->getDataQuestionnaire()->getSurname()}} {{$object->getDataQuestionnaire()->getName()}} {{$object->getDataQuestionnaire()->getPatronymic()}}
                             </div>
-                            <div class="company-place">
-                                <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
-                                     width="15px">
-                                {{$object->getDataQuestionnaire()->getCity()}}
-                            </div>
+                            @if($object->getDataQuestionnaire()->getCity())
+                                <div class="company-place">
+                                    <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
+                                         width="15px">
+                                    {{$object->getDataQuestionnaire()->getCity()}}
+                                </div>
+                            @endif
                         </div>
                         <div class="application-name">
                             Front-end разработчик
@@ -217,7 +220,8 @@
                             {{$object->getDataQuestionnaire()->getDescription()}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn" onclick="window.location.href='/home/company/more/{{$object->getDataQuestionnaire()->getId()}}'">
+                            <button class="button btn"
+                                    onclick="window.location.href='/home/company/more/{{$object->getDataQuestionnaire()->getId()}}'">
                                 Подробнее
                             </button>
                         </div>

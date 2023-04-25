@@ -25,147 +25,147 @@
                 </div>
             </article>
             <div class="filter-more">
-            <article class="filter-type salary">
-                <h3 class="filter-title">Уровень дохода</h3>
-                <div class="filter-choose">
-                    <div>
-                        <input id="notDefined" type="radio" name="salary">
-                        <label for="notDefined">Доход не указан</label>
+                <article class="filter-type salary">
+                    <h3 class="filter-title">Уровень дохода</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="notDefined" type="radio" name="salary">
+                            <label for="notDefined">Доход не указан</label>
+                        </div>
+                        <div>
+                            <input id="from500" type="radio" name="salary">
+                            <label for="from500">От 500 руб.</label>
+                        </div>
+                        <div>
+                            <input id="from1000" type="radio" name="salary">
+                            <label for="from1000">От 1000 руб.</label>
+                        </div>
+                        <div>
+                            <input id="from1500" type="radio" name="salary">
+                            <label for="from1500">От 1500 руб.</label>
+                        </div>
+                        <div>
+                            <input id="from2000" type="radio" name="salary">
+                            <label for="from2000">От 2000 руб.</label>
+                        </div>
+                        <div>
+                            <input id="from2500" type="radio" name="salary">
+                            <label for="from2500">От 2500 руб.</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="from500" type="radio" name="salary">
-                        <label for="from500">От 500 руб.</label>
+                </article>
+                <article class="filter-type place">
+                    <h3 class="filter-title">Местонахождение</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="mogilev" type="checkbox" name="place">
+                            <label for="mogilev">Могилёв</label>
+                        </div>
+                        <div>
+                            <input id="minsk" type="checkbox" name="place">
+                            <label for="minsk">Минск</label>
+                        </div>
+                        <div>
+                            <input id="grodno" type="checkbox" name="place">
+                            <label for="grodno">Гродно</label>
+                        </div>
+                        <div>
+                            <input id="brest" type="checkbox" name="place">
+                            <label for="brest">Брест</label>
+                        </div>
+                        <div>
+                            <input id="vitebsk" type="checkbox" name="place">
+                            <label for="vitebsk">Витебск</label>
+                        </div>
+                        <div>
+                            <input id="gomel" type="checkbox" name="place">
+                            <label for="gomel">Гомель</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="from1000" type="radio" name="salary">
-                        <label for="from1000">От 1000 руб.</label>
+                </article>
+                <article class="filter-type specialization">
+                    <h3 class="filter-title">Специализация</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="frontend" type="radio" name="specialization">
+                            <label for="frontend">Front-end разработчик</label>
+                        </div>
+                        <div>
+                            <input id="backend" type="radio" name="specialization">
+                            <label for="backend">Back-end разработчик</label>
+                        </div>
+                        <div>
+                            <input id="fullstack" type="radio" name="specialization">
+                            <label for="fullstack">Fullstack разработчик</label>
+                        </div>
+                        <div>
+                            <input id="game" type="radio" name="specialization">
+                            <label for="game">Разработчик игр</label>
+                        </div>
+                        <div>
+                            <input id="mobile" type="radio" name="specialization">
+                            <label for="mobile">Разработчик моб. приложений</label>
+                        </div>
+                        <div>
+                            <input id="tester" type="radio" name="specialization">
+                            <label for="tester">Тестировщик</label>
+                        </div>
+                        <div>
+                            <input id="projectManager" type="radio" name="specialization">
+                            <label for="projectManager">Менеджер проекта</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="from1500" type="radio" name="salary">
-                        <label for="from1500">От 1500 руб.</label>
+                </article>
+                <article class="filter-type lang">
+                    <h3 class="filter-title">Языки программирования</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="c#" type="checkbox" name="lang">
+                            <label for="c#">C#</label>
+                        </div>
+                        <div>
+                            <input id="c++" type="checkbox" name="lang">
+                            <label for="c++">C++</label>
+                        </div>
+                        <div>
+                            <input id="javascript" type="checkbox" name="lang">
+                            <label for="javascript">JavaScript</label>
+                        </div>
+                        <div>
+                            <input id="php" type="checkbox" name="lang">
+                            <label for="php">PHP</label>
+                        </div>
+                        <div>
+                            <input id="java" type="checkbox" name="lang">
+                            <label for="java">Java</label>
+                        </div>
+                        <div>
+                            <input id="1c" type="checkbox" name="lang">
+                            <label for="1c">1С</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="from2000" type="radio" name="salary">
-                        <label for="from2000">От 2000 руб.</label>
+                </article>
+                <article class="filter-type schedule">
+                    <h3 class="filter-title">График работы</h3>
+                    <div class="filter-choose">
+                        <div>
+                            <input id="fullDay" type="checkbox" name="schedule">
+                            <label for="fullDay">Полный день</label>
+                        </div>
+                        <div>
+                            <input id="shiftWork" type="checkbox" name="schedule">
+                            <label for="shiftWork">Сменный график</label>
+                        </div>
+                        <div>
+                            <input id="flexibleSchedule" type="checkbox" name="schedule">
+                            <label for="flexibleSchedule">Гибкий график</label>
+                        </div>
+                        <div>
+                            <input id="distantWork" type="checkbox" name="schedule">
+                            <label for="distantWork">Удалённая работа</label>
+                        </div>
                     </div>
-                    <div>
-                        <input id="from2500" type="radio" name="salary">
-                        <label for="from2500">От 2500 руб.</label>
-                    </div>
-                </div>
-            </article>
-            <article class="filter-type place">
-                <h3 class="filter-title">Местонахождение</h3>
-                <div class="filter-choose">
-                    <div>
-                        <input id="mogilev" type="checkbox" name="place">
-                        <label for="mogilev">Могилёв</label>
-                    </div>
-                    <div>
-                        <input id="minsk" type="checkbox" name="place">
-                        <label for="minsk">Минск</label>
-                    </div>
-                    <div>
-                        <input id="grodno" type="checkbox" name="place">
-                        <label for="grodno">Гродно</label>
-                    </div>
-                    <div>
-                        <input id="brest" type="checkbox" name="place">
-                        <label for="brest">Брест</label>
-                    </div>
-                    <div>
-                        <input id="vitebsk" type="checkbox" name="place">
-                        <label for="vitebsk">Витебск</label>
-                    </div>
-                    <div>
-                        <input id="gomel" type="checkbox" name="place">
-                        <label for="gomel">Гомель</label>
-                    </div>
-                </div>
-            </article>
-            <article class="filter-type specialization">
-                <h3 class="filter-title">Специализация</h3>
-                <div class="filter-choose">
-                    <div>
-                        <input id="frontend" type="radio" name="specialization">
-                        <label for="frontend">Front-end разработчик</label>
-                    </div>
-                    <div>
-                        <input id="backend" type="radio" name="specialization">
-                        <label for="backend">Back-end разработчик</label>
-                    </div>
-                    <div>
-                        <input id="fullstack" type="radio" name="specialization">
-                        <label for="fullstack">Fullstack разработчик</label>
-                    </div>
-                    <div>
-                        <input id="game" type="radio" name="specialization">
-                        <label for="game">Разработчик игр</label>
-                    </div>
-                    <div>
-                        <input id="mobile" type="radio" name="specialization">
-                        <label for="mobile">Разработчик моб. приложений</label>
-                    </div>
-                    <div>
-                        <input id="tester" type="radio" name="specialization">
-                        <label for="tester">Тестировщик</label>
-                    </div>
-                    <div>
-                        <input id="projectManager" type="radio" name="specialization">
-                        <label for="projectManager">Менеджер проекта</label>
-                    </div>
-                </div>
-            </article>
-            <article class="filter-type lang">
-                <h3 class="filter-title">Языки программирования</h3>
-                <div class="filter-choose">
-                    <div>
-                        <input id="c#" type="checkbox" name="lang">
-                        <label for="c#">C#</label>
-                    </div>
-                    <div>
-                        <input id="c++" type="checkbox" name="lang">
-                        <label for="c++">C++</label>
-                    </div>
-                    <div>
-                        <input id="javascript" type="checkbox" name="lang">
-                        <label for="javascript">JavaScript</label>
-                    </div>
-                    <div>
-                        <input id="php" type="checkbox" name="lang">
-                        <label for="php">PHP</label>
-                    </div>
-                    <div>
-                        <input id="java" type="checkbox" name="lang">
-                        <label for="java">Java</label>
-                    </div>
-                    <div>
-                        <input id="1c" type="checkbox" name="lang">
-                        <label for="1c">1С</label>
-                    </div>
-                </div>
-            </article>
-            <article class="filter-type schedule">
-                <h3 class="filter-title">График работы</h3>
-                <div class="filter-choose">
-                    <div>
-                        <input id="fullDay" type="checkbox" name="schedule">
-                        <label for="fullDay">Полный день</label>
-                    </div>
-                    <div>
-                        <input id="shiftWork" type="checkbox" name="schedule">
-                        <label for="shiftWork">Сменный график</label>
-                    </div>
-                    <div>
-                        <input id="flexibleSchedule" type="checkbox" name="schedule">
-                        <label for="flexibleSchedule">Гибкий график</label>
-                    </div>
-                    <div>
-                        <input id="distantWork" type="checkbox" name="schedule">
-                        <label for="distantWork">Удалённая работа</label>
-                    </div>
-                </div>
-            </article>
+                </article>
             </div>
             <div class="show-more">
                 <span class="show-more-text">Показать больше</span>
@@ -174,8 +174,9 @@
             <button class="btn button">Применить</button>
         </aside>
     </div>
+
     <!-- Список вакансий / стундентов -->
-    <!-- For student -->
+
     <section class="application-container">
         <h2 class="application-title">Кол-во вакансий: {{count($arrayAnnouncements)}}</h2>
         <div class="application-list">
@@ -189,11 +190,13 @@
                             <div class="company-name">
                                 {{$object->company_name}}
                             </div>
-                            <div class="company-place">
-                                <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
-                                     width="15px">
-                                {{$object->city}}
-                            </div>
+                            @if($object->city)
+                                <div class="company-place">
+                                    <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}" alt="place-icon"
+                                         width="15px">
+                                    {{$object->city}}
+                                </div>
+                            @endif
                         </div>
                         <div class="application-name">
                             {{$object->header}}
@@ -202,7 +205,8 @@
                             {{$object->description}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn" onclick="window.location.href='/home/company/more/{{$object->id_course}}'">
+                            <button class="button btn"
+                                    onclick="window.location.href='/home/company/more/{{$object->id_course}}'">
                                 Подробнее
                             </button>
                         </div>
