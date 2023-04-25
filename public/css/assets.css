@@ -10,6 +10,10 @@
     background: #8e0000;
 }
 
+.button.success{
+    background: #155724;
+}
+
 .button:hover,
 .button:active {
     color: var(--white);
@@ -19,6 +23,11 @@
 .button.danger:hover,
 .button.danger:active{
     background: #d50000;
+}
+
+.button.success:hover,
+.button.success:active{
+    background: #00b92c;
 }
 
 .custom-select {
