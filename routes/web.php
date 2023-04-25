@@ -55,6 +55,12 @@ Route::post('/home/student/send-application/serve', [StudentApplicationControlle
     ->middleware('auth')
     ->name('newApplication');
 
+Route::get('/my-applications/students', function () {
+    return view('pages.student-applications');
+})
+    ->middleware('auth')
+    ->name('studentApplications');
+
 
 
 Route::get('/home/student/more/send-application/success', function (){
