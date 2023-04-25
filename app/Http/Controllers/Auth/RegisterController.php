@@ -7,6 +7,7 @@ use App\Models\Company_info;
 use App\Models\Student_info;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -83,14 +84,16 @@ class RegisterController extends Controller
                 'patronymic' => $data['patronymic'],
                 'group' => $data['group'],
                 'id_student' => $user->id,
-                'photo_src' => asset('img/company-icons/sample_user_icon.png')
+                'photo_src' => asset('img/company-icons/sample_user_icon.png'),
+                'created_at' => Carbon::now()
             ]);
         } elseif ($data['type_user'] === 'Компания') {
             Company_info::create([
                 'company_name' => $data['name'],
                 'phone_contact' => $data['phone'],
                 'id_company' => $user->id,
-                'photo_src' => asset('img/company-icons/sample_user_icon.png')
+                'photo_src' => asset('img/company-icons/sample_user_icon.png'),
+                'created_at' => Carbon::now()
             ]);
         } else {
             throw new Exception("Exception Error");

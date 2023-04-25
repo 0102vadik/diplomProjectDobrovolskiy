@@ -23,7 +23,9 @@ class StudentsService
             foreach ($studentInfo as $language) {
                 array_push($arrayStudentsLanguage, $language->getLanguage);
             }
-            array_push($this->arrayStudents, new Student($student, $arrayStudentsLanguage));
+            if (!in_array(null,$student) || empty($arrayStudentsLanguage)) {
+                array_push($this->arrayStudents, new Student($student, $arrayStudentsLanguage));
+            }
         }
     }
 
