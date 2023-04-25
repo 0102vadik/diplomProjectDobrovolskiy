@@ -206,7 +206,7 @@
                         </div>
                         <div class="application-btn">
                             <button class="button btn"
-                                    onclick="window.location.href='/home/company/more/{{$object->id_course}}'">
+                                    onclick="window.location.href='/home/student/more/{{$object->id_course}}'">
                                 Подробнее
                             </button>
                         </div>
