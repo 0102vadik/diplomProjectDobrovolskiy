@@ -23,7 +23,7 @@ class StudentsService
             foreach ($studentInfo as $language) {
                 array_push($arrayStudentsLanguage, $language->getLanguage);
             }
-            if (!in_array(null,$student) || empty($arrayStudentsLanguage)) {
+            if (!in_array(null, $student) || empty($arrayStudentsLanguage)) {
                 array_push($this->arrayStudents, new Student($student, $arrayStudentsLanguage));
             }
         }
@@ -34,8 +34,19 @@ class StudentsService
         return $this->arrayStudents;
     }
 
-    public function getStudentsById($idStudents){
+    public function getStudentsById($idStudents)
+    {
         return $this->studentsRepositories->getStudentsById($idStudents);
+    }
+
+    public function getStudentsSort(array $type,array $city,array $language,array $shedule)
+    {
+        $sortedStudents = [];
+        foreach ($this->arrayStudents as $student) {
+            if(in_array($student->getDataQuestionnaire()->getCity(), $city)){
+                array_push($sortedStudents,$student);
+            }
+        }
     }
 
 }

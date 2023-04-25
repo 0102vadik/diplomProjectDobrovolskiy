@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\Profile\MyProfileController;
+use App\Http\Controllers\SortController;
 use App\Http\Controllers\StudentApplicationController;
 use App\Http\Controllers\Vacancies\VacanciesCompanyController;
 use App\Http\Controllers\Vacancies\VacanciesStudentController;
@@ -100,3 +101,6 @@ Route::post('/my-profile/update/students', [MyProfileController::class,'updatePr
 
 Route::post('/create-applications/create', [AnnouncementsController::class,'sandApplication'])->middleware('auth')->name('createApplicationsPost');
 Route::get('/my-applications/delete/{id}', [AnnouncementsController::class,'deleteAnnouncements'])->middleware('auth');
+
+
+Route::post('/sort/announcement',[SortController::class,'sortAnnouncements'])->middleware('auth')->name('sortAnnouncement');
