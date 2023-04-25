@@ -95,7 +95,7 @@
                     <div class="first-block block">
                         <div>
                             <img class="profile-icon"
-                                 {{-- src="{{ asset($information['photo_src']) }}"--}}
+                                 src="{{ asset($moreInformation['photo_src']) }}"
                                  alt="company-icon">
                         </div>
                         {{--<div>
@@ -113,19 +113,19 @@
                             <label class="custom-label"
                                    for="studentSurname">Фамилия</label>
                             <input class="custom-input" type="text" name="studentSurname" id="studentSurname"
-                                   value="{{--{{$information['surname']}}--}}" disabled>
+                                   value="{{$moreInformation['surname']}}" disabled>
                         </div>
                         <div>
                             <label class="custom-label"
                                    for="studentName">Имя</label>
                             <input class="custom-input" type="text" name="studentName" id="studentName"
-                                   value="{{--{{$information['name']}}--}}" disabled>
+                                   value="{{$moreInformation['name']}}" disabled>
                         </div>
                         <div>
                             <label class="custom-label"
                                    for="studentPatronymic">Отчество</label>
                             <input class="custom-input" type="text" name="studentPatronymic" id="studentPatronymic"
-                                   value="{{--{{$information['patronymic']}}--}}" disabled>
+                                   value="{{$moreInformation['patronymic']}}" disabled>
                         </div>
                     </div>
 
@@ -133,22 +133,15 @@
                         <div>
                             <label class="custom-label" for="studentPlace">Город проживания</label>
                             <input class="custom-input" type="text" name="studentPlace" id="studentPlace"
-                                   value="{{--{{$information['city']}}--}}" disabled>
+                                   value="{{$moreInformation['city']}}" disabled>
                         </div>
                         <div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
                                 <select name="specialization" id="specialization">
-                                    <option selected value="{{--{{$information['specialization'] ?? ""}}--}}"
+                                    <option selected value="{{$moreInformation['specialization'] ?? ""}}"
                                             name="specialization"
-                                            hidden>{{--{{$information['specialization'] ?? ""}}--}}</option>
-                                    <option value="Front-end разработчик">Front-end разработчик</option>
-                                    <option value="Back-end разработчик">Back-end разработчик</option>
-                                    <option value="Fullstack разработчик">Fullstack разработчик</option>
-                                    <option value="Разработчик игр">Разработчик игр</option>
-                                    <option value="Разработчик моб. приложений">Разработчик моб. приложений</option>
-                                    <option value="Тестировщик">Тестировщик</option>
-                                    <option value="Менеджер проекта">Менеджер проекта</option>
+                                            hidden>{{$moreInformation['specialization'] ?? ""}}</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -201,12 +194,7 @@
                             <div class="custom-select">
                                 <select name="preferredIncome" id="salary">
                                     <option selected
-                                            value="{{--{{$information['preferred_income'] ??"Доход не указан"}}--}}">{{--{{$information['preferred_income'] ??"Доход не указан"}}--}}</option>
-                                    <option value="От 500 руб.">От 500 руб.</option>
-                                    <option value="От 1000 руб.">От 1000 руб.</option>
-                                    <option value="От 1500 руб.">От 1500 руб.</option>
-                                    <option value="От 2000 руб.">От 2000 руб.</option>
-                                    <option value="От 2500 руб.">От 2500 руб.</option>
+                                            value="{{$moreInformation['preferred_income'] ??"Доход не указан"}}">{{$information['preferred_income'] ??"Доход не указан"}}</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -216,12 +204,8 @@
                             <label class="custom-label" for="schedule">Предпочитаемый график работы</label>
                             <div class="custom-select">
                                 <select name="preferredSchedule" id="schedule">
-                                    <option selected value="{{--{{$information['preferred_schedule'] ??""}}--}}"
-                                            hidden>{{--{{$information['preferred_schedule'] ??""}}--}}</option>
-                                    <option value="Полный день">Полный день</option>
-                                    <option value="Сменный график">Сменный график</option>
-                                    <option value="Гибкий график">Гибкий график</option>
-                                    <option value="Удалённая работа">Удалённая работа</option>
+                                    <option selected value="{{$moreInformation['preferred_schedule'] ??""}}"
+                                            hidden>{{$moreInformation['preferred_schedule'] ??""}}</option>
                                 </select>
                                 <div class="select_arrow">
                                 </div>
@@ -232,19 +216,19 @@
                         <div>
                             <label class="custom-label" for="studentPlace">Курс</label>
                             <input class="custom-input" type="number" name="studentCourse" id="studentCourse"
-                                   value="{{--{{$information['course']}}--}}" disabled>
+                                   value="{{$moreInformation['course']}}" disabled>
                         </div>
                         <div>
                             <label class="custom-label" for="studentPlace">Группа</label>
                             <input class="custom-input" type="text" name="studentGroup" id="studentGroup"
-                                   value="{{--{{$information['group']}}--}}" disabled>
+                                   value="{{$moreInformation['group']}}" disabled>
                         </div>
                     </div>
                     <div class="block">
                         <div>
                             <label class="custom-label" for="description">Описание</label>
                             <textarea class="custom-textarea" name="description" id="description" cols="30"
-                                      rows="10" disabled>{{--{{$information['description']}}--}}</textarea>
+                                      rows="10" disabled>{{$moreInformation['description']}}</textarea>
                         </div>
                     </div>
                     {{--<button class="btn button" type="submit">Отправить заявку</button>--}}

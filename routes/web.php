@@ -41,6 +41,10 @@ Route::get('/home/student',[VacanciesStudentController::class, 'index'])->middle
 // ВРЕМЕННЫЕ РОУТЫ
 Route::get('/home/student/more/{id}', [AnnouncementsController::class,'moreInfo'])
     ->middleware('auth')
+    ->name('more-student');
+
+Route::get('/home/company/more/{idStudents}', [VacanciesCompanyController::class,'moreInformation'])
+    ->middleware('auth')
     ->name('more-company');
 
 Route::get('/home/student/send-application', function (){

@@ -6,6 +6,7 @@ use App\Contracts\IQuestionnaire;
 
 class DataQuestionnaireStudents implements IQuestionnaire
 {
+    protected int $id;
     protected string $name;
     protected string $surname;
     protected string $patronymic;
@@ -25,6 +26,11 @@ class DataQuestionnaireStudents implements IQuestionnaire
         $this->city = $dataQuestionnaire['city'] ?? "";
         $this->description = $dataQuestionnaire['description'] ?? "";
         $this->photo_src = $dataQuestionnaire['photo_src'] ?? "";
+        $this->id = $dataQuestionnaire['id_student'];
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     /**

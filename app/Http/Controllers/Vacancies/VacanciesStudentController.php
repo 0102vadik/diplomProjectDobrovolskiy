@@ -19,10 +19,6 @@ class VacanciesStudentController extends Controller
 
     public function index()
     {
-//        return view('pages.home', [
-//            'arrayObject' => $this->companyService->getArrayCompany()
-//        ]);
-
         return view('pages.home', [
             'arrayAnnouncements' => $this->announcementsService->getAll()
         ]);

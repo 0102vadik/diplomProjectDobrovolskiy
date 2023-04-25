@@ -217,7 +217,7 @@
                             {{$object->getDataQuestionnaire()->getDescription()}}
                         </div>
                         <div class="application-btn">
-                            <button class="button btn" onclick="window.location.href='{{ route("more-company") }}'">
+                            <button class="button btn" onclick="window.location.href='/home/company/more/{{$object->getDataQuestionnaire()->getId()}}'">
                                 Подробнее
                             </button>
                         </div>

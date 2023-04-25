@@ -32,4 +32,8 @@ class StudentsService
         return $this->arrayStudents;
     }
 
+    public function getStudentsById($idStudents){
+        return $this->studentsRepositories->getStudentsById($idStudents);
+    }
+
 }
