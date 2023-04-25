@@ -36,12 +36,14 @@
                                         <div class="company-name">
                                             {{$object->company_name}}
                                         </div>
-                                        <div class="company-place">
-                                            <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
-                                                 alt="place-icon"
-                                                 width="15px">
-                                            {{$object->city}}
-                                        </div>
+                                        @if($object->city)
+                                            <div class="company-place">
+                                                <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
+                                                     alt="place-icon"
+                                                     width="15px">
+                                                {{$object->city}}
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="application-name">
                                         {{$announcements->header}}
@@ -49,12 +51,21 @@
                                     <div class="application-description">
                                         {{$announcements->description}}
                                     </div>
-                                    <div class="application-btn">
-                                        <button
-                                            class="button btn danger"
-                                            onclick="window.location.href='/my-applications/delete/{{$announcements->id_course}}'">
-                                            Удалить вакансию
-                                        </button>
+                                    <div class="application-buttons">
+                                        <div class="application-btn">
+                                            <button
+                                                class="button btn primary"
+                                                onclick="window.location.href='{{--{{ route('') }}--}}'">
+                                                Заявки студентов
+                                            </button>
+                                        </div>
+                                        <div class="application-btn">
+                                            <button
+                                                class="button btn danger"
+                                                onclick="window.location.href='/my-applications/delete/{{$announcements->id_course}}'">
+                                                Удалить вакансию
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -69,50 +80,50 @@
             <div class="application-content">
                 {{--@foreach($informationAnnouncements as $announcements)--}}
 
-                    <section class="application-container">
-                        <div class="application-list">
-                            <article class="application-card">
-                                <div class="company-icon">
-                                    <img src="{{--{{ asset($object->logo_src)}}--}}" alt="company-icon">
-                                </div>
-                                <div class="company-info">
-                                    <div class="company-name-place">
-                                        <div class="company-name">
-                                            {{--{{$object->company_name}}--}}
-                                        </div>
-                                        <div class="company-place">
-                                            <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
-                                                 alt="place-icon"
-                                                 width="15px">
-                                            {{--{{$object->city}}--}}
-                                        </div>
+                <section class="application-container">
+                    <div class="application-list">
+                        <article class="application-card">
+                            <div class="company-icon">
+                                <img src="{{--{{ asset($object->logo_src)}}--}}" alt="company-icon">
+                            </div>
+                            <div class="company-info">
+                                <div class="company-name-place">
+                                    <div class="company-name">
+                                        {{--{{$object->company_name}}--}}
                                     </div>
-                                    <div class="application-name">
-                                        {{--{{$announcements->header}}--}}
-                                    </div>
-                                    <div class="application-description">
-                                        {{--{{$announcements->description}}--}}
-                                    </div>
-                                    <div class="application-status">
-                                        {{--{{$announcements->description}}--}}
-                                        <input class="custom-input pending" type="tel" name="companyPhone" id="companyPhone"
-                                               value="Ожидание ответа" disabled>
-                                        <input class="custom-input success" type="tel" name="companyPhone" id="companyPhone"
-                                               value="Принята" disabled>
-                                        <input class="custom-input danger" type="tel" name="companyPhone" id="companyPhone"
-                                               value="Отклонена" disabled>
-                                    </div>
-                                    <div class="application-btn">
-                                        <button
-                                            class="button btn danger"
-                                            onclick="window.location.href='/my-applications/delete/{{--{{$announcements->id_course}}--}}'">
-                                            Удалить заявку
-                                        </button>
+                                    <div class="company-place">
+                                        <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
+                                             alt="place-icon"
+                                             width="15px">
+                                        {{--{{$object->city}}--}}
                                     </div>
                                 </div>
-                            </article>
-                        </div>
-                    </section>
+                                <div class="application-name">
+                                    {{--{{$announcements->header}}--}}
+                                </div>
+                                <div class="application-description">
+                                    {{--{{$announcements->description}}--}}
+                                </div>
+                                <div class="application-status">
+                                    {{--{{$announcements->description}}--}}
+                                    <input class="custom-input pending" type="tel" name="companyPhone" id="companyPhone"
+                                           value="Ожидание ответа" disabled>
+                                    <input class="custom-input success" type="tel" name="companyPhone" id="companyPhone"
+                                           value="Принята" disabled>
+                                    <input class="custom-input danger" type="tel" name="companyPhone" id="companyPhone"
+                                           value="Отклонена" disabled>
+                                </div>
+                                <div class="application-btn">
+                                    <button
+                                        class="button btn danger"
+                                        onclick="window.location.href='/my-applications/delete/{{--{{$announcements->id_course}}--}}'">
+                                        Удалить заявку
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
                 {{--@endforeach--}}
             </div>
         </div>
