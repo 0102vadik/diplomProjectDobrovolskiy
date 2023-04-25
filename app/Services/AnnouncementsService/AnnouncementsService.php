@@ -15,26 +15,41 @@ class AnnouncementsService
         $this->repositories = new AnnouncementsFromCompaniesRepository();
     }
 
-    public function sandAnnouncements(string $description, int $idAuthor, string $header,string $expectation_date,string $type)
+    public function sandAnnouncements(string $description, int $idAuthor, string $header, string $expectation_date, string $type)
     {
         $this->repositories
-            ->create(compact("description","idAuthor","header","expectation_date","type"));
+            ->create(compact("description", "idAuthor", "header", "expectation_date", "type"));
     }
 
-    public function getAnnouncementsUser(){
+    public function getAnnouncementsUser()
+    {
         return $this->repositories->getAllByIdAuthor(Auth::id());
     }
 
-    public function deleteAnncouncement(int $id){
+    public function deleteAnncouncement(int $id)
+    {
         $this->repositories->delete($id);
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         return $this->repositories->getAll();
     }
 
-    public function getById(int $id){
+    public function getById(int $id)
+    {
         return $this->repositories->getById($id);
+    }
+
+    public function getAnnoncementsSort($type, $city)
+    {
+        if ($type == null) {
+            $type = ['Cтажировка', 'Практика', 'Работа'];
+        }
+        if ($city == null) {
+            $city = $this->repositories->getAllCity()->toArray();
+        }
+        return $this->repositories->getSort($type, $city);
     }
 
 }

@@ -47,4 +47,18 @@ class AnnouncementsFromCompaniesRepository implements IRepositories
     {
         // TODO: Implement update() method.
     }
+
+    public function getAllCity(){
+        return Announcements_from_companies::join('company_infos','announcements_from_companies.id_author','=','company_infos.id_company')
+            ->select('company_infos.city')
+            ->get();
+    }
+
+    public function getSort(array $type,array $city){
+        return Announcements_from_companies::join('company_infos','announcements_from_companies.id_author','=','company_infos.id_company')
+            ->select('announcements_from_companies.*','company_infos.phone_contact','company_infos.logo_src','company_infos.city','company_infos.company_name','company_infos.id_company')
+            ->whereIn('announcements_from_companies.type',$type)
+            ->whereIn('company_infos.city',$city)
+            ->get();
+    }
 }
