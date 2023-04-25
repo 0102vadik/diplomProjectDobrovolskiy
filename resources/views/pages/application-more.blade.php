@@ -22,8 +22,8 @@
     <main>
         <div class="container">
             @if(Auth::user()->type_user == "Студент")
-                <form action="{{ route('send-application') }}" {{--method="post" enctype="multipart/form-data"--}}
-                    {{--action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}"--}}>
+                <div>  {{--method="post" enctype="multipart/form-data"--}}
+                    {{--action="{{Auth::user()->type_user == "Компания" ? route('updateProfileCompany') : route('updateProfileStudents')}}"--}}
                     {{--@csrf--}}
                     <div class="first-block block">
                         <div>
@@ -83,8 +83,8 @@
                                       rows="10" disabled>{{$information->description}} </textarea>
                         </div>
                     </div>
-                    <button class="btn button" onclick="window.location.href='/home/student/send-application'">Отправить заявку</button>
-                </form>
+                    <button class="btn button" onclick="window.location.href='/home/student/send-application/{{$information->id_company}}'">Отправить заявку</button>
+                </div>
             @endif
 
             @if(Auth::user()->type_user == "Компания")

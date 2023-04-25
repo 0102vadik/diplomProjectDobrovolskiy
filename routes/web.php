@@ -47,9 +47,14 @@ Route::get('/home/company/more/{idStudents}', [VacanciesCompanyController::class
     ->middleware('auth')
     ->name('more-company');
 
-Route::get('/home/student/send-application', function (){
+Route::get('/home/student/send-application/{idCompany}', function (){
     return view('pages.send-application');
-})->name('send-application');
+});
+
+
+Route::post('/home/student/send-application/serve', [StudentApplicationController::class,'sandApplication'])
+    ->middleware('auth')
+    ->name('newApplication');
 
 
 

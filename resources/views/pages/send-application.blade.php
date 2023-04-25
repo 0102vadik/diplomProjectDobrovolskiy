@@ -15,7 +15,7 @@
     <main>
         <div class="container">
             <!-- РАСКОММЕНТИРОВАТЬ МЕТОД ПОСТ И УБРАТЬ ACTION (Должно перенаправлять на страницу send-application-success.blade.php) -->
-            <form {{--method="post"--}} action="/home/student/send-application">
+            <form method="post" action="{{route('newApplication')}}">
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>
@@ -29,7 +29,7 @@
                                   rows="10"></textarea>
                     </div>
                 </div>
-                <button class="btn button">Отправить заявку</button>
+                <button class="btn button" type="submit">Отправить заявку</button>
             </form>
         </div>
     </main>
