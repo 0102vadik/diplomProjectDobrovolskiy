@@ -29,7 +29,7 @@
                             <label class="custom-image-upload">
                                 <span class="custom-image-upload-text" type="text"></span>
                                 <input type="file" name="imgLogo" accept="image/jpeg,image/png">
-                                <span class="{{--custom-image-upload-btn--}} btn button">Выберите файл</span>
+                                <span class="btn button">Выберите файл</span>
                             </label>
                         </div>
                     </div>

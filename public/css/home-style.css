@@ -226,6 +226,7 @@ main .application-content .application-filters .filter-choose label {
 
 .application-card .company-info .application-schedules .application-schedule{
     margin-right: 0;
+    align-self: end;
 }
 
 .application-card .company-info .application-description{
@@ -330,6 +331,17 @@ main .application-content .application-filters .filter-choose label {
     }
     .company-place{
         display: none;
+    }
+    .application-card .company-info .application-langs-schedules{
+        flex-direction: column;
+    }
+    .application-card .company-info .application-langs-schedules .application-langs{
+        flex-direction: column;
+    }
+    .application-card .company-info .application-langs-schedules .application-langs .application-lang{
+        margin-bottom: .5rem;
+        width: 100px;
+        text-align: center;
     }
 }
 
