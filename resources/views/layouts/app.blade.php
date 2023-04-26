@@ -50,7 +50,7 @@
                                 <a href="{{ route("home") }}" class="nav-link">{{ __('Список вакансий') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route("my-applications") }}" class="nav-link">{{ __('Мои заявки') }}</a>
+                                <a href="{{ route("my-applicationsStudent") }}" class="nav-link">{{ __('Мои заявки') }}</a>
                             </li>
                         @endif
                         @if(Auth::user()->type_user == "Компания")

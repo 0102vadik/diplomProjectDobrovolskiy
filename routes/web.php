@@ -70,6 +70,10 @@ Route::get('/home/student/more/send-application/success', function (){
 Route::get('/my-applications',
     [AnnouncementsController::class,'pageMyAnnouncements'])
     ->name('my-applications');
+
+Route::get('/my-applications/students',
+    [StudentApplicationController::class,'getApplicationStudents'])
+    ->name('my-applicationsStudent');
 //-----------------
 
 Route::get('/register/student', function (){

@@ -34,4 +34,8 @@ class StudentApplicationService
         $this->studentApplicationRepositories->statusReject($idApplication);
     }
 
+    public function getApplicationStudent(){
+        return $this->studentApplicationRepositories->getApplicationByStudent(Auth::id());
+    }
+
 }

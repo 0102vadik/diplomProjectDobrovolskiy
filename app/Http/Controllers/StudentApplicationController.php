@@ -42,4 +42,10 @@ class StudentApplicationController extends Controller
         $this->applicationService->rejectApplication($idApplication);
         return redirect()->to('/my-applications/students/'.$idCourse);
     }
+
+    public function getApplicationStudents(){
+        return view('pages.my-application',[
+            'applicationInfo' =>$this->applicationService->getApplicationStudent()
+        ]);
+    }
 }

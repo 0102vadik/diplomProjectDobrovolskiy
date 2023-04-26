@@ -55,4 +55,10 @@ class StudentApplicationsRepositories implements IRepositories
             'status' => 'Заявка отклонена'
         ]);
     }
+
+    public function getApplicationByStudent(int $idStudents){
+        return Student_application::join('company_infos','student_applications.id_company','=','company_infos.id_company')
+            ->select('student_applications.*','company_infos.phone_contact','company_infos.logo_src','company_infos.city','company_infos.company_name','company_infos.id_company')
+            ->where('student_applications.id_student',$idStudents)->get();
+    }
 }
