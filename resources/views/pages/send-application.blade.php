@@ -14,7 +14,6 @@
     </header>
     <main>
         <div class="container">
-            <!-- РАСКОММЕНТИРОВАТЬ МЕТОД ПОСТ И УБРАТЬ ACTION (Должно перенаправлять на страницу send-application-success.blade.php) -->
             <form method="post" action="{{route('newApplication')}}">
                 @csrf
                 <input type="text" name="idCourse" id="id" value="{{$idCourse}}" hidden>
@@ -22,14 +21,14 @@
                 <div class="block">
                     <div>
                         <label class="custom-label" for="header">Заголовок</label>
-                        <input class="custom-input" type="text" name="header" id="header">
+                        <input class="custom-input" type="text" name="header" id="header" required>
                     </div>
                 </div>
                 <div class="fifth-block block">
                     <div>
                         <label class="custom-label" for="description">Сообщение</label>
                         <textarea class="custom-textarea" name="message" id="description" cols="30"
-                                  rows="10"></textarea>
+                                  rows="10" required></textarea>
                     </div>
                 </div>
                 <button class="btn button" type="submit">Отправить заявку</button>

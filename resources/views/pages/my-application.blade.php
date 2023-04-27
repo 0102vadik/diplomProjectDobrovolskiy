@@ -91,12 +91,14 @@
                                         <div class="company-name">
                                             {{$application->company_name}}
                                         </div>
-                                        <div class="company-place">
-                                            <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
-                                                 alt="place-icon"
-                                                 width="15px">
-                                            {{$application->city}}
-                                        </div>
+                                        @if($application->city)
+                                            <div class="company-place">
+                                                <img src="{{ asset('img/interface-icons/fi-rr-marker.png') }}"
+                                                     alt="place-icon"
+                                                     width="15px">
+                                                {{$application->city}}
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="application-name">
                                         {{$application->header}}

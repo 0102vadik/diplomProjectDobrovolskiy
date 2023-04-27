@@ -138,7 +138,7 @@
                         <div class="custom-select-container">
                             <label class="custom-label" for="specialization">Специализация</label>
                             <div class="custom-select">
-                                <select name="specialization" id="specialization">
+                                <select name="specialization" id="specialization" disabled>
                                     <option selected value="{{$moreInformation['specialization'] ?? ""}}"
                                             name="specialization"
                                             hidden>{{$moreInformation['specialization'] ?? ""}}</option>
@@ -192,7 +192,7 @@
                         <div>
                             <label class="custom-label" for="salary">Предпочитаемый доход</label>
                             <div class="custom-select">
-                                <select name="preferredIncome" id="salary">
+                                <select name="preferredIncome" id="salary" disabled>
                                     <option selected
                                             value="{{$moreInformation['preferred_income'] ??"Доход не указан"}}">{{$information['preferred_income'] ??"Доход не указан"}}</option>
                                 </select>
@@ -203,7 +203,7 @@
                         <div class="custom-select-container">
                             <label class="custom-label" for="schedule">Предпочитаемый график работы</label>
                             <div class="custom-select">
-                                <select name="preferredSchedule" id="schedule">
+                                <select name="preferredSchedule" id="schedule" disabled>
                                     <option selected value="{{$moreInformation['preferred_schedule'] ??""}}"
                                             hidden>{{$moreInformation['preferred_schedule'] ??""}}</option>
                                 </select>
