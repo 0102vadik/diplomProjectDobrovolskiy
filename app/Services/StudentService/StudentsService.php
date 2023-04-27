@@ -39,6 +39,15 @@ class StudentsService
         return $this->studentsRepositories->getStudentsById($idStudents);
     }
 
+    public function getLanguageStudentsById(int $id_student){
+        $studentInfo = Student_info::find($id_student)->getLanguages;
+        $arrayStudentsLanguage = [];
+        foreach ($studentInfo as $language) {
+            array_push($arrayStudentsLanguage, $language->getLanguage);
+        }
+        return $arrayStudentsLanguage;
+    }
+
     public function getStudentsSort($city,$specialization,$income,$shedule)
     {
         $sortedStudents = [];

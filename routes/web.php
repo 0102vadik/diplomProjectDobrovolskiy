@@ -76,6 +76,9 @@ Route::get('/my-applications/students',
     ->name('my-applicationsStudent');
 //-----------------
 
+Route::get('/my-applications/delete/student/{idApplication}',
+    [StudentApplicationController::class,'deleteApplication']);
+
 Route::get('/register/student', function (){
    return view('forms.student');
 })->name('register-student');

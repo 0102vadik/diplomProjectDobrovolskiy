@@ -128,7 +128,7 @@
                                     <div class="application-btn">
                                         <button
                                             class="button btn danger"
-                                            onclick="window.location.href='/my-applications/delete/{{--{{$announcements->id_course}}--}}'">
+                                            onclick="window.location.href='/my-applications/delete/student/{{$application->id_application}}'">
                                             Удалить заявку
                                         </button>
                                     </div>

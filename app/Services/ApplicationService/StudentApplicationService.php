@@ -37,5 +37,8 @@ class StudentApplicationService
     public function getApplicationStudent(){
         return $this->studentApplicationRepositories->getApplicationByStudent(Auth::id());
     }
+    public function deleteById(int $id){
+        $this->studentApplicationRepositories->delete($id);
+    }
 
 }

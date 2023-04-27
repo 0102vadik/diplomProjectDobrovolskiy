@@ -25,6 +25,7 @@ class VacanciesCompanyController extends Controller
     public function moreInformation(int $idStudents){
         return view('pages.application-more',[
             'moreInformation'=>$this->studentsService->getStudentsById($idStudents),
+            'langs' => $this->studentsService->getLanguageStudentsById($idStudents)
         ]);
     }
 }

@@ -155,36 +155,13 @@
                         <div>
                             <label class="custom-label" for="salary">Языки программирования</label>
                             <div class="langs">
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="1">
-                                    <label for="c#">C#</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="2">
-                                    <label for="c++">C++</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="3">
-                                    <label for="javascript">JavaScript</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="4">
-                                    <label for="php">PHP</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="5">
-                                    <label for="java">Java</label>
-                                </div>
-                                <div class="lang">
-                                    <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
-                                           value="6">
-                                    <label for="1c">1C</label>
-                                </div>
+                                @foreach($langs as $lang)
+                                    <div class="lang">
+                                        <input class="custom-checkbox" name="programmingLanguages[]" type="checkbox"
+                                               value="1" checked>
+                                        <label for="c#">{{$lang->language}}</label>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

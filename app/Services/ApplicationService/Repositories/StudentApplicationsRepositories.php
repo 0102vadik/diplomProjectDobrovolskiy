@@ -17,7 +17,7 @@ class StudentApplicationsRepositories implements IRepositories
 
     public function delete($id): void
     {
-        Student_application::destroy($id);
+        Student_application::where('id_application',$id)->delete();
     }
 
     public function create(array $info)

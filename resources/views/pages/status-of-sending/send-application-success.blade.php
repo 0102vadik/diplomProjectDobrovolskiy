@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="alert-redirect">
-                    <button class="btn button" onclick="window.location.href='{{ route('my-applications') }}'">Мои заявки</button>
+                    <button class="btn button" onclick="window.location.href='{{ route('my-applicationsStudent') }}'">Мои заявки</button>
                 </div>
             </div>
         </div>

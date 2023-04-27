@@ -48,4 +48,9 @@ class StudentApplicationController extends Controller
             'applicationInfo' =>$this->applicationService->getApplicationStudent()
         ]);
     }
+
+    public function deleteApplication(int $idApplication){
+        $this->applicationService->deleteById($idApplication);
+        return redirect()->to(route('my-applicationsStudent'));
+    }
 }
