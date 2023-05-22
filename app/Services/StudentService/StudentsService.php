@@ -48,6 +48,24 @@ class StudentsService
         return $arrayStudentsLanguage;
     }
 
+    public function getStudentBySearch(string $searchText){
+        $arraySearchStudent = [];
+        foreach ($this->arrayStudents as $student) {
+            if (stristr($student->getDataQuestionnaire()->getSpecialization(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getPreferredSchedule(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getPreferredIncome(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getCity(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getName(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getSurname(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getPatronymic(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getGroup(), $searchText) !== FALSE ||
+                stristr($student->getDataQuestionnaire()->getDescription(), $searchText) !== FALSE){
+                    array_push($arraySearchStudent,$student);
+            }
+        }
+        return $arraySearchStudent;
+    }
+
     public function getStudentsSort($city,$specialization,$income,$shedule)
     {
         $sortedStudents = [];

@@ -9,10 +9,11 @@
             </h3>
         </div>
 
-        <form action="">
+        <form action="{{route('searchCompany')}}" method="post">
+            @csrf
             <div class="header-search">
                 <input class="search-input" type="search"
-                       placeholder="Каких студентов вы ищете?">
+                       name="search" placeholder="Каких студентов вы ищете?">
                 <button onclick="window.location.href='#applications'" class="search-btn" type="submit">
                     Найти
                 </button>

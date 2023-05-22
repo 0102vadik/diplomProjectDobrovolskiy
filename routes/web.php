@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\Profile\MyProfileController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SortController;
 use App\Http\Controllers\StudentApplicationController;
 use App\Http\Controllers\Vacancies\VacanciesCompanyController;
@@ -119,3 +120,5 @@ Route::get('/my-applications/delete/{id}', [AnnouncementsController::class,'dele
 Route::post('/sort/announcement',[SortController::class,'sortAnnouncements'])->middleware('auth')->name('sortAnnouncement');
 Route::post('/sort/students',[SortController::class,'sortStudents'])->middleware('auth')->name('sortStudents');
 
+Route::post('/search/student',[SearchController::class,'searchForStudent'])->middleware('auth')->name('searchStudent');
+Route::post('/search/company',[SearchController::class,'searchForCompany'])->middleware('auth')->name('searchCompany');

@@ -9,9 +9,10 @@
                 </h3>
             </div>
 
-            <form action="">
+            <form action="{{route('searchStudent')}}" method="post">
+                @csrf
                 <div class="header-search">
-                    <input class="search-input" type="search" placeholder="Какую вакансию вы ищите?">
+                    <input class="search-input" type="search" name="search" placeholder="Какую вакансию вы ищите?">
                     <button class="search-btn" type="submit">Найти</button>
                 </div>
             </form>
