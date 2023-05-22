@@ -16,6 +16,8 @@ class SearchController extends Controller
             ->where('announcements_from_companies.expectation_date','>=',Carbon::today())
             ->where( 'announcements_from_companies.header', 'like', '%' . $request->search . '%' )
             ->orWhere( 'announcements_from_companies.description', 'like', '%' . $request->search . '%' )
+            ->orWhere( 'company_infos.company_name', 'like', '%' . $request->search . '%' )
+            ->orWhere( 'company_infos.description', 'like', '%' . $request->search . '%' )
             ->orWhere( 'announcements_from_companies.type', 'like', '%' . $request->search . '%' )
             ->orWhere( 'announcements_from_companies.expectation_date', 'like', '%' . $request->search . '%' )
             ->orderBy( 'announcements_from_companies.expectation_date', 'desc' )->get();
